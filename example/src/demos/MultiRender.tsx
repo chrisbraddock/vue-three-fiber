@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@vue-three/fiber'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
 import { defineComponent, onMounted, ref } from 'vue'
 import { Mesh } from 'three'
 
@@ -30,9 +30,7 @@ const SpinningScene = defineComponent({
   setup() {
     return () => (
       <div style={CanvasStyle}>
-        <Canvas>
-          <SpinningObject />
-        </Canvas>
+        <Canvas>{{ default: () => <SpinningObject /> }}</Canvas>
       </div>
     )
   },
@@ -43,10 +41,14 @@ const StaticScene = defineComponent({
     return () => (
       <div style={CanvasStyle}>
         <Canvas>
-          <mesh>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshNormalMaterial />
-          </mesh>
+          {{
+            default: () => (
+              <mesh>
+                <boxGeometry args={[1, 1, 1]} />
+                <meshNormalMaterial />
+              </mesh>
+            ),
+          }}
         </Canvas>
       </div>
     )

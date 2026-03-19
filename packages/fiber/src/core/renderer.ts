@@ -8,6 +8,7 @@ import {
   onBeforeUnmount,
   type AppContext,
   type VNode,
+  type PropType,
 } from 'vue'
 import * as THREE from 'three'
 import { createStore as createZustandStore } from 'zustand/vanilla'
@@ -41,6 +42,14 @@ import {
   prepare,
   updateCamera,
 } from './utils'
+import type { ResolvedFiberPluginEntry } from '../plugins/types'
+import {
+  V3FStoreProvider,
+  FiberRuntimeProvider,
+  FiberInheritedRuntimeProvider,
+  FIBER_PLUGIN_RUNTIME,
+} from '../plugins/provider'
+import { sameResolvedPluginEntries, type PluginRuntime } from '../plugins/runtime'
 
 // Shim for OffscreenCanvas since it was removed from DOM types
 // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/54988
@@ -127,22 +136,13 @@ export interface ReconcilerRoot<TCanvas extends HTMLCanvasElement | OffscreenCan
   configure: (config?: RenderProps<TCanvas>) => Promise<ReconcilerRoot<TCanvas>>
   render: (
     children: VNode | VNode[] | (() => VNode | VNode[]),
-    options?: { appContext?: AppContext | null },
+    options?: { appContext?: AppContext | null; plugins?: ResolvedFiberPluginEntry[] },
   ) => RootStore
   unmount: () => void
 }
 
-// Provider component that injects the V3F store into the Vue component tree
-const V3FProvider = defineComponent({
-  name: 'V3FProvider',
-  props: {
-    store: { type: Object as () => RootStore, required: true },
-  },
-  setup(props, { slots }) {
-    provide(context, props.store)
-    return () => slots.default?.()
-  },
-})
+// V3FProvider kept as a thin compat alias — now delegates to plugin-aware providers
+// (V3FStoreProvider + FiberRuntimeProvider are imported from ../plugins/provider)
 
 function computeInitialSize(canvas: HTMLCanvasElement | OffscreenCanvas, size?: Size): Size {
   if (
@@ -405,7 +405,7 @@ export function createRoot<TCanvas extends HTMLCanvasElement | OffscreenCanvas>(
     },
     render(
       children: VNode | VNode[] | (() => VNode | VNode[]),
-      options?: { appContext?: AppContext | null },
+      options?: { appContext?: AppContext | null; plugins?: ResolvedFiberPluginEntry[] },
     ): RootStore {
       // The root has to be configured before it can be rendered
       if (!configured && !pending) this.configure()
@@ -422,9 +422,29 @@ export function createRoot<TCanvas extends HTMLCanvasElement | OffscreenCanvas>(
         // Connect events to the targets parent
         if (!store.getState().events.connected) state.events.connect?.(canvas as any)
 
-        // Create the virtual DOM tree with the provider wrapping children
+        // Build the provider tree: V3FStoreProvider → FiberRuntimeProvider → children
         const childContent = typeof children === 'function' ? children : () => children
-        const vnode = createVNode(V3FProvider, { store }, { default: childContent })
+        const pluginEntries = options?.plugins ?? []
+
+        const vnode = createVNode(
+          V3FStoreProvider,
+          { store },
+          {
+            default: () =>
+              pluginEntries.length > 0
+                ? createVNode(
+                    FiberRuntimeProvider,
+                    {
+                      entries: pluginEntries,
+                      appContext: options?.appContext ?? null,
+                      canvas,
+                      store,
+                    },
+                    { default: childContent },
+                  )
+                : childContent(),
+          },
+        )
         if (options?.appContext) vnode.appContext = options.appContext
 
         // Render the vnode tree using the Vue custom renderer for Three.js
@@ -510,6 +530,7 @@ const Portal = defineComponent({
     const owner = getCurrentInstance()
     const { events, size, ...rest } = props.state || {}
     const previousRoot = inject(context) as RootStore
+    const parentRuntime = inject(FIBER_PLUGIN_RUNTIME, undefined) as PluginRuntime | undefined
     const raycaster = new THREE.Raycaster()
     const pointer = new THREE.Vector2()
     const viewportTarget = new THREE.Vector3()
@@ -566,7 +587,14 @@ const Portal = defineComponent({
 
       Promise.resolve().then(() => {
         if (unmounted) return
-        const vnode = createVNode(V3FProvider, { store: portalStore }, { default: () => children })
+
+        // Build portal provider tree: store provider → optional inherited runtime → children
+        const childContent = () => children
+        const innerContent = parentRuntime
+          ? () => createVNode(FiberInheritedRuntimeProvider, { runtime: parentRuntime }, { default: childContent })
+          : childContent
+
+        const vnode = createVNode(V3FStoreProvider, { store: portalStore }, { default: innerContent })
         vnode.appContext = owner?.appContext ?? null
         vueRender(vnode, portalContainer)
       })

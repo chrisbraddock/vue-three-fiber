@@ -13,7 +13,7 @@ Let's take a small Vue example:
 
 ```vue
 <script setup>
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 </script>
 
 <template>
@@ -178,15 +178,11 @@ Every object with `onPointer` props will be added to the array of objects checke
 The ray's `origin` and `direction` are updated every time the mouse moves on the `<Canvas />` element or the window is resized.
 Fiber also handles camera switching, meaning that the raycaster will always use the currently active camera.
 
-When using the `raycast` prop, the object will instead be picked using a custom ray:
+When using the `raycast` prop, the object will instead be picked using a custom raycasting function:
 
 ```vue
-<script setup>
-import { useCamera } from '@vue-three/drei'
-</script>
-
 <template>
-  <mesh :raycast="useCamera(anotherCamera)" />
+  <mesh :raycast="customRaycastFn" />
 </template>
 ```
 

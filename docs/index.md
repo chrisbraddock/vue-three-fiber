@@ -9,6 +9,9 @@ hero:
       text: Get Started
       link: /getting-started/introduction
     - theme: alt
+      text: Examples
+      link: /getting-started/examples
+    - theme: alt
       text: API Reference
       link: /API/canvas
 features:

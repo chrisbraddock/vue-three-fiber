@@ -1,4 +1,4 @@
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 import { computed, defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { DoubleSide, Mesh, MeshBasicMaterial, SphereGeometry } from 'three'
 
@@ -125,10 +125,14 @@ export default defineComponent({
   setup() {
     return () => (
       <Canvas camera={{ position: [2, 2, 2] }}>
-        <TestMultiMaterial position={[0, 0, 0.5]} />
-        <TestMultiDelete position={[0, 0, -0.5]} />
-        <TestReuse />
-        <TestMix position={[0, 1, 0]} />
+        {{
+          default: () => [
+            <TestMultiMaterial position={[0, 0, 0.5]} />,
+            <TestMultiDelete position={[0, 0, -0.5]} />,
+            <TestReuse />,
+            <TestMix position={[0, 1, 0]} />,
+          ],
+        }}
       </Canvas>
     )
   },

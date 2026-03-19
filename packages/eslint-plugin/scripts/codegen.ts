@@ -41,9 +41,9 @@ async function ruleDocsPath(name: string): Promise<string> {
 async function generateConfig(name: string, rules: FoundRule[]) {
   const code = `
     export default {
-      plugins: ['@vue-three'],
+      plugins: ['@bluera/vue-threejs'],
       rules: {
-        ${rules.map((rule) => `'@vue-three/${rule.moduleName}': 'error'`).join(',')}
+        ${rules.map((rule) => `'@bluera/vue-threejs/${rule.moduleName}': 'error'`).join(',')}
       },
     }
   `

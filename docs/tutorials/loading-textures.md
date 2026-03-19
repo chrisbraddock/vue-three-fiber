@@ -19,7 +19,7 @@ Let's then with this information create a small scene where we can use this text
 
 ```vue
 <script setup>
-import { Canvas, useLoader } from '@vue-three/fiber'
+import { Canvas, useLoader } from '@bluera/vue-threejs'
 import { TextureLoader } from 'three'
 
 const colorMap = useLoader(TextureLoader, 'PavingStones092_1K_Color.jpg')
@@ -78,7 +78,7 @@ The displacement will probably be too much, usually setting it to 0.2 will make 
 
 ```vue
 <script setup>
-import { useLoader } from '@vue-three/fiber'
+import { useLoader } from '@bluera/vue-threejs'
 import { TextureLoader } from 'three'
 
 const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useLoader(TextureLoader, [
@@ -107,43 +107,23 @@ const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useLoader(Te
 
 ## Using `useTexture`
 
-Another way to import these is using `useTexture` from [`@vue-three/drei`](https://github.com/pmndrs/drei), that will make it slightly easier and there is no need to import the `TextureLoader`, our code would look like:
-
-```js
-import { useTexture } from '@vue-three/drei'
-
-const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useTexture([
-  'PavingStones092_1K_Color.jpg',
-  'PavingStones092_1K_Displacement.jpg',
-  'PavingStones092_1K_Normal.jpg',
-  'PavingStones092_1K_Roughness.jpg',
-  'PavingStones092_1K_AmbientOcclusion.jpg',
-])
-```
-
-You can also use object-notation which is the most convenient:
+For loading a single texture, `@bluera/vue-threejs-drei` provides `useTexture` which handles loading and cleanup automatically:
 
 ```vue
 <script setup>
-import { useTexture } from '@vue-three/drei'
+import { useTexture } from '@bluera/vue-threejs-drei'
 
-const props = useTexture({
-  map: 'PavingStones092_1K_Color.jpg',
-  displacementMap: 'PavingStones092_1K_Displacement.jpg',
-  normalMap: 'PavingStones092_1K_Normal.jpg',
-  roughnessMap: 'PavingStones092_1K_Roughness.jpg',
-  aoMap: 'PavingStones092_1K_AmbientOcclusion.jpg',
-})
+const colorMap = useTexture('PavingStones092_1K_Color.jpg')
 </script>
 
 <template>
   <mesh>
     <sphereGeometry :args="[1, 32, 32]" />
-    <meshStandardMaterial v-bind="props" />
+    <meshStandardMaterial :map="colorMap" />
   </mesh>
 </template>
 ```
 
-You can play with the sandbox and see how it looks:
+`useTexture` accepts a string (or a reactive `Ref<string>`) and returns a `ShallowRef<THREE.Texture | null>`. The texture is automatically disposed when the component unmounts.
 
-<Codesandbox id="rusfd" />
+For loading multiple textures, use `useLoader` with an array as shown above.

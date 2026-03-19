@@ -35,19 +35,19 @@ onMounted(() => {
 Whenever you want to type components that rely on three elements, you can use the `ThreeElements` interface to extract the mesh, group, or any other three element, including custom elements.
 
 ```ts
-import { ThreeElements } from '@vue-three/fiber'
+import { ThreeElements } from '@bluera/vue-threejs'
 
 type FooProps = ThreeElements['mesh'] & { bar: boolean }
 ```
 
 ## Extend usage
 
-vue-three-fiber can also accept third-party elements and extend them into its internal catalogue.
+vue-threejs can also accept third-party elements and extend them into its internal catalogue.
 
 ```ts
 import { ref } from 'vue'
 import { GridHelper } from 'three'
-import { extend } from '@vue-three/fiber'
+import { extend } from '@bluera/vue-threejs'
 
 // Create our custom element
 class CustomElement extends GridHelper {}
@@ -78,7 +78,7 @@ To define our element, we'll use the `ThreeElement` interface to extend `ThreeEl
 ```ts
 import { ref } from 'vue'
 import { GridHelper } from 'three'
-import { extend, ThreeElement } from '@vue-three/fiber'
+import { extend, ThreeElement } from '@bluera/vue-threejs'
 
 // Create our custom element
 class CustomElement extends GridHelper {}
@@ -87,7 +87,7 @@ class CustomElement extends GridHelper {}
 extend({ CustomElement })
 
 // Add types to ThreeElements elements so primitives pick up on it
-declare module '@vue-three/fiber' {
+declare module '@bluera/vue-threejs' {
   interface ThreeElements {
     customElement: ThreeElement<typeof CustomElement>
   }
@@ -95,7 +95,7 @@ declare module '@vue-three/fiber' {
 ```
 
 ```vue
-<!-- vue-three-fiber will create your custom component and TypeScript will understand it -->
+<!-- vue-threejs will create your custom component and TypeScript will understand it -->
 <template>
   <customElement />
 </template>
@@ -112,7 +112,7 @@ const Element = extend(CustomElement)
 ```
 
 ```vue
-<!-- vue-three-fiber will create your custom component and TypeScript will understand it -->
+<!-- vue-threejs will create your custom component and TypeScript will understand it -->
 <template>
   <Element />
 </template>
@@ -124,7 +124,7 @@ If you open your own root instead of using `<Canvas>`, you can extend the defaul
 
 ```ts
 import * as THREE from 'three'
-import { extend, createRoot, events } from '@vue-three/fiber'
+import { extend, createRoot, events } from '@bluera/vue-threejs'
 
 // Register the THREE namespace as native elements.
 extend(THREE as any)
@@ -135,7 +135,7 @@ const root = createRoot(document.querySelector('canvas'))
 
 ## Exported types
 
-vue-three-fiber is extensible and exports types for its internals, such as render props, canvas props, and events:
+vue-threejs is extensible and exports types for its internals, such as render props, canvas props, and events:
 
 ```ts
 // Event raycaster intersection

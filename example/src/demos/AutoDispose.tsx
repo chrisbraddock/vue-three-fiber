@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@vue-three/fiber'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
 import { defineComponent, ref } from 'vue'
 import { Mesh } from 'three'
 
@@ -80,8 +80,9 @@ export default defineComponent({
   setup() {
     return () => (
       <Canvas orthographic camera={{ zoom: 100 }}>
-        <ambientLight intensity={Math.PI} />
-        <Switcher />
+        {{
+          default: () => [<ambientLight intensity={Math.PI} />, <Switcher />],
+        }}
       </Canvas>
     )
   },

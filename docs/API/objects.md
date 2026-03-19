@@ -192,7 +192,7 @@ const mesh = new THREE.Mesh(geometry, material)
 The `extend` function extends Vue Three Fiber's catalogue of elements. Components added this way can then be referenced in the scene-graph using camel casing similar to other primitives.
 
 ```js
-import { extend } from '@vue-three/fiber'
+import { extend } from '@bluera/vue-threejs'
 import { OrbitControls, TransformControls } from 'three-stdlib'
 extend({ OrbitControls, TransformControls })
 ```
@@ -204,7 +204,7 @@ extend({ OrbitControls, TransformControls })
 </template>
 ```
 
-If you're using TypeScript, you'll also need to [extend the element namespace](/tutorials/v9-migration-guide#threeelements).
+If you're using TypeScript, you'll also need to [extend the element namespace](/API/typescript).
 
 ## Disposal
 

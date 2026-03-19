@@ -1,19 +1,19 @@
 {
-  "name": "@vue-three/test-renderer",
+  "name": "@bluera/vue-threejs-test-renderer",
   "version": "1.0.0",
-  "description": "Test renderer for @vue-three/fiber.",
+  "description": "Test renderer for @bluera/vue-threejs.",
   "license": "MIT",
   "private": false,
-  "main": "dist/vue-three-test-renderer.cjs.js",
-  "module": "dist/vue-three-test-renderer.esm.js",
-  "types": "dist/vue-three-test-renderer.cjs.d.ts",
+  "main": "dist/bluera-vue-threejs-test-renderer.cjs.js",
+  "module": "dist/bluera-vue-threejs-test-renderer.esm.js",
+  "types": "dist/bluera-vue-threejs-test-renderer.cjs.d.ts",
   "bugs": {
-    "url": "https://github.com/chrisbraddock/vue-three-fiber/issues"
+    "url": "https://github.com/blueraai/vue-threejs/issues"
   },
-  "homepage": "https://github.com/chrisbraddock/vue-three-fiber/tree/master/packages/test-renderer",
+  "homepage": "https://github.com/blueraai/vue-threejs/tree/master/packages/test-renderer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisbraddock/vue-three-fiber.git"
+    "url": "git+https://github.com/blueraai/vue-threejs.git"
   },
   "preconstruct": {
     "entrypoints": [
@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "vue": ">=3.3",
-    "@vue-three/fiber": ">=1.0.0",
+    "@bluera/vue-threejs": ">=1.0.0",
     "three": ">=0.156"
   }
 }

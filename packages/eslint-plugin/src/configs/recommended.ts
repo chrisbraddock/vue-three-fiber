@@ -2,9 +2,9 @@
 // @command yarn codegen:eslint
 
 export default {
-  plugins: ['@vue-three'],
+  plugins: ['@bluera/vue-threejs'],
   rules: {
-    '@vue-three/no-clone-in-loop': 'error',
-    '@vue-three/no-new-in-loop': 'error',
+    '@bluera/vue-threejs/no-clone-in-loop': 'error',
+    '@bluera/vue-threejs/no-new-in-loop': 'error',
   },
 }

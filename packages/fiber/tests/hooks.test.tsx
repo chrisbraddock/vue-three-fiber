@@ -1,6 +1,6 @@
 import { defineComponent, h } from 'vue'
 import * as THREE from 'three'
-import { createCanvas } from '@vue-three/test-renderer/src/createTestCanvas'
+import { createCanvas } from '@bluera/vue-threejs-test-renderer/src/createTestCanvas'
 
 import {
   ReconcilerRoot,

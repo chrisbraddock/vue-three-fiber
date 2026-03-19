@@ -36,7 +36,7 @@ jobs:
 
       - name: Build docs
         env:
-          VITEPRESS_BASE: /vue-three-fiber/
+          VITEPRESS_BASE: /vue-threejs/
         run: yarn docs:build
 
       - name: Upload Pages artifact

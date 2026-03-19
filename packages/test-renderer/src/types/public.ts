@@ -1,5 +1,5 @@
 import type { VNode } from 'vue'
-import type { Camera, RenderProps } from '@vue-three/fiber'
+import type { Camera, RenderProps } from '@bluera/vue-threejs'
 
 import { VueThreeTestInstance } from '../createTestInstance'
 
@@ -47,4 +47,4 @@ export interface TreeNode {
 
 export type Tree = TreeNode[]
 
-export type { Act } from '@vue-three/fiber'
+export type { Act } from '@bluera/vue-threejs'

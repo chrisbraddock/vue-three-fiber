@@ -1,5 +1,5 @@
 import type { Object3D } from 'three'
-import type { Instance } from '@vue-three/fiber'
+import type { Instance } from '@bluera/vue-threejs'
 
 interface WithV3FInstance {
   __v3f?: Instance

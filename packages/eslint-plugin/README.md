@@ -1,18 +1,18 @@
-# @vue-three/eslint-plugin
+# @bluera/eslint-plugin-vue-threejs
 
-[![Version](https://img.shields.io/npm/v/@vue-three/eslint-plugin?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@vue-three/eslint-plugin)
+[![Version](https://img.shields.io/npm/v/@bluera/eslint-plugin-vue-threejs?style=flat&colorA=000000&colorB=000000)](https://npmjs.com/package/@bluera/eslint-plugin-vue-threejs)
 [![Twitter](https://img.shields.io/twitter/follow/pmndrs?label=%40pmndrs&style=flat&colorA=000000&colorB=000000&logo=twitter&logoColor=000000)](https://twitter.com/pmndrs)
 [![Discord](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=000000)](https://discord.gg/ZZjjNvJ)
 [![Open Collective](https://img.shields.io/opencollective/all/vue-three-fiber?style=flat&colorA=000000&colorB=000000)](https://opencollective.com/vue-three-fiber)
 [![ETH](https://img.shields.io/badge/ETH-f5f5f5?style=flat&colorA=000000&colorB=000000)](https://blockchain.com/eth/address/0x6E3f79Ea1d0dcedeb33D3fC6c34d2B1f156F2682)
 [![BTC](https://img.shields.io/badge/BTC-f5f5f5?style=flat&colorA=000000&colorB=000000)](https://blockchain.com/btc/address/36fuguTPxGCNnYZSRdgdh6Ea94brCAjMbH)
 
-An ESLint plugin which provides lint rules for [@vue-three/fiber](https://github.com/chrisbraddock/vue-three-fiber).
+An ESLint plugin which provides lint rules for [@bluera/vue-threejs](https://github.com/blueraai/vue-threejs).
 
 ## Installation
 
 ```bash
-npm install @vue-three/eslint-plugin --save-dev
+npm install @bluera/eslint-plugin-vue-threejs --save-dev
 ```
 
 ## Configuration
@@ -21,17 +21,17 @@ Use the recommended [config](#recommended) to get reasonable defaults:
 
 ```json
 "extends": [
-  "plugin:@vue-three/recommended"
+  "plugin:@bluera/vue-threejs/recommended"
 ]
 ```
 
 If you do not use a config you will need to specify individual rules and add extra configuration.
 
-Add "@vue-three" to the plugins section.
+Add "@bluera/vue-three" to the plugins section.
 
 ```json
 "plugins": [
-  "@vue-three"
+  "@bluera/vue-three"
 ]
 ```
 
@@ -39,7 +39,7 @@ Enable the rules that you would like to use.
 
 ```json
 "rules": {
-  "@vue-three/no-clone-in-frame-loop": "error"
+  "@bluera/vue-threejs/no-clone-in-frame-loop": "error"
 }
 ```
 
@@ -67,7 +67,7 @@ This plugin exports a `recommended` configuration that enforces rules appropriat
 
 ```json
 "extends": [
-  "plugin:@vue-three/recommended"
+  "plugin:@bluera/vue-threejs/recommended"
 ]
 ```
 
@@ -77,6 +77,6 @@ This plugin also exports an `all` configuration that includes every available ru
 
 ```json
 "extends": [
-  "plugin:@vue-three/all"
+  "plugin:@bluera/vue-threejs/all"
 ]
 ```

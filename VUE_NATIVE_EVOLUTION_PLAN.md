@@ -161,7 +161,7 @@ using normal Vue composition patterns.
 
 ### 6. Keep core lean; put higher-level ergonomics in an extras layer when appropriate
 
-Not every improvement belongs in `@vue-three/fiber`.
+Not every improvement belongs in `@bluera/vue-threejs`.
 
 Recommended split:
 
@@ -213,7 +213,7 @@ Usage:
 
 ```vue
 <script setup lang="ts">
-import { useObjectRef, useFrame } from '@vue-three/fiber'
+import { useObjectRef, useFrame } from '@bluera/vue-threejs'
 import type { Mesh } from 'three'
 
 const cube = useObjectRef<Mesh>()

@@ -1,0 +1,22 @@
+{
+  "name": "@bluera/vue-threejs-postprocessing",
+  "version": "1.0.0",
+  "description": "Vue-native postprocessing effects for @bluera/vue-threejs",
+  "license": "MIT",
+  "main": "dist/bluera-vue-threejs-postprocessing.cjs.js",
+  "module": "dist/bluera-vue-threejs-postprocessing.esm.js",
+  "types": "dist/bluera-vue-threejs-postprocessing.cjs.d.ts",
+  "sideEffects": false,
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "vue": ">=3.3",
+    "three": ">=0.156",
+    "@bluera/vue-threejs": ">=1.0.0",
+    "postprocessing": ">=6.30"
+  }
+}

@@ -1,6 +1,6 @@
 import { defineComponent, h, type ShallowRef } from 'vue'
 import { Camera, Scene, Raycaster, Mesh, Loader } from 'three'
-import { useFrame, useLoader, useThree } from '@vue-three/fiber'
+import { useFrame, useLoader, useThree } from '@bluera/vue-threejs'
 
 import VueThreeTestRenderer from '../index'
 

@@ -1,3 +1,5 @@
+import { isHTMLTag, isSVGTag } from '@vue/shared'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vitepress'
 
 const base = process.env.VITEPRESS_BASE || '/'
@@ -6,10 +8,18 @@ export default defineConfig({
   base,
   title: 'Vue Three Fiber',
   description: 'A Vue 3 renderer for Three.js',
+  vite: {
+    plugins: [
+      vueJsx({
+        isCustomElement: (tag) => !isHTMLTag(tag) && !isSVGTag(tag),
+      }),
+    ],
+  },
   themeConfig: {
     nav: [
       { text: 'Getting Started', link: '/getting-started/introduction' },
       { text: 'API', link: '/API/canvas' },
+      { text: 'Ecosystem', link: '/ecosystem/plugins' },
       { text: 'Tutorials', link: '/tutorials/basic-animations' },
     ],
     sidebar: [
@@ -46,18 +56,31 @@ export default defineConfig({
           { text: 'Demand Rendering', link: '/tutorials/demand-rendering' },
           { text: 'DOM Overlays', link: '/tutorials/dom-overlays' },
           { text: 'Scene Transitions', link: '/tutorials/scene-transitions' },
-          { text: 'v9 Migration Guide', link: '/tutorials/v9-migration-guide' },
+          { text: 'Vue-Native Patterns', link: '/tutorials/vue-native-patterns' },
+        ],
+      },
+      {
+        text: 'Ecosystem',
+        items: [
+          { text: 'Plugin System', link: '/ecosystem/plugins' },
+          { text: 'Drei', link: '/ecosystem/drei' },
+          { text: 'Postprocessing', link: '/ecosystem/postprocessing' },
+          { text: 'Rapier Physics', link: '/ecosystem/rapier' },
         ],
       },
       {
         text: 'Advanced',
         items: [
+          { text: 'Compatibility Contract', link: '/advanced/compatibility-contract' },
+          { text: 'Known Limitations', link: '/advanced/known-limitations' },
           { text: 'Pitfalls', link: '/advanced/pitfalls' },
           { text: 'Scaling Performance', link: '/advanced/scaling-performance' },
           { text: 'Vue Divergences', link: '/advanced/vue-divergences' },
+          { text: 'Architecture', link: '/advanced/architecture' },
+          { text: 'Support Matrix', link: '/advanced/support-matrix' },
         ],
       },
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/chrisbraddock/vue-three-fiber' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/blueraai/vue-threejs' }],
   },
 })

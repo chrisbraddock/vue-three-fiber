@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useThree } from '@vue-three/fiber'
+import { Canvas, useFrame, useThree } from '@bluera/vue-threejs'
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { Group } from 'three'
 
@@ -78,7 +78,7 @@ export default defineComponent({
   setup() {
     return () => (
       <Canvas dpr={[1, 2]} frameloop="always" performance={{ min: 0.1 }}>
-        <Scene />
+        {{ default: () => <Scene /> }}
       </Canvas>
     )
   },

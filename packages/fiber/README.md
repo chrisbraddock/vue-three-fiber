@@ -2,7 +2,7 @@
 
 `vue-three-fiber` is a Vue 3 port of [react-three-fiber](https://github.com/pmndrs/react-three-fiber), the React renderer for [Three.js](https://threejs.org/).
 
-It provides declarative Three.js scene authoring for Vue, keeping high API overlap with R3F where practical and adding Vue-native APIs where Vue offers a better fit: explicit object handles, render lifecycle composables, DOM/scene slot composition, and reactive demand-render helpers. See [Vue Divergences](docs/advanced/vue-divergences.md) for where and why the two renderers differ.
+It provides declarative Three.js scene authoring for Vue, keeping high API overlap with R3F where practical and adding Vue-native APIs where Vue offers a better fit: explicit object handles, render lifecycle composables, DOM/scene slot composition, and reactive demand-render helpers. See [Vue Divergences](https://blueraai.github.io/vue-threejs/advanced/vue-divergences) for where and why the two renderers differ.
 
 Requires `vue >= 3.3` and `three >= 0.156`.
 
@@ -19,8 +19,8 @@ Requires `vue >= 3.3` and `three >= 0.156`.
 There is no published npm package for this repo yet. To work with it locally:
 
 ```bash
-git clone https://github.com/chrisbraddock/vue-three-fiber.git
-cd vue-three-fiber
+git clone https://github.com/blueraai/vue-threejs.git
+cd vue-threejs
 yarn install
 yarn build
 ```
@@ -28,7 +28,7 @@ yarn build
 Useful local commands:
 
 ```bash
-yarn examples      # run the example app
+yarn examples      # run the docs site with integrated examples
 yarn docs:dev      # run the docs site locally
 yarn test          # run the test suite
 yarn typecheck     # run TypeScript checks
@@ -46,7 +46,7 @@ Composables like `useFrame` and `useObjectRef` must be used inside components re
 ```vue
 <script setup lang="ts">
 import type { Mesh } from 'three'
-import { useFrame, useObjectRef } from '@vue-three/fiber'
+import { useFrame, useObjectRef } from '@bluera/vue-threejs'
 
 const box = useObjectRef<Mesh>()
 
@@ -70,7 +70,7 @@ useFrame((_, delta) => {
 
 ```vue
 <script setup lang="ts">
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 import RotatingBox from './RotatingBox.vue'
 </script>
 
@@ -105,12 +105,13 @@ import RotatingBox from './RotatingBox.vue'
 
 ## Docs
 
-- [Introduction](https://docs.pmnd.rs/vue-three-fiber/getting-started/introduction)
-- [Vue Divergences](https://docs.pmnd.rs/vue-three-fiber/advanced/vue-divergences)
-- [Object Handles](https://docs.pmnd.rs/vue-three-fiber/tutorials/object-handles)
-- [Demand Rendering](https://docs.pmnd.rs/vue-three-fiber/tutorials/demand-rendering)
-- [DOM Overlays](https://docs.pmnd.rs/vue-three-fiber/tutorials/dom-overlays)
-- [Scene Transitions](https://docs.pmnd.rs/vue-three-fiber/tutorials/scene-transitions)
+- [Docs Home](https://blueraai.github.io/vue-threejs/)
+- [Introduction](https://blueraai.github.io/vue-threejs/getting-started/introduction)
+- [Vue Divergences](https://blueraai.github.io/vue-threejs/advanced/vue-divergences)
+- [Object Handles](https://blueraai.github.io/vue-threejs/tutorials/object-handles)
+- [Demand Rendering](https://blueraai.github.io/vue-threejs/tutorials/demand-rendering)
+- [DOM Overlays](https://blueraai.github.io/vue-threejs/tutorials/dom-overlays)
+- [Scene Transitions](https://blueraai.github.io/vue-threejs/tutorials/scene-transitions)
 
 ## Status
 

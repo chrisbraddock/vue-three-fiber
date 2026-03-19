@@ -1,26 +1,18 @@
 {
-  "name": "vue-three-fiber-example",
+  "name": "vue-threejs-example",
   "version": "1.0.0",
   "private": true,
-  "description": "Example app for vue-three-fiber",
+  "description": "Demo source files for vue-threejs docs",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "serve": "vite preview"
-  },
   "dependencies": {
+    "@bluera/vue-threejs-drei": "1.0.0",
+    "@bluera/vue-threejs-postprocessing": "1.0.0",
+    "postprocessing": ">=6.30",
     "three": "^0.172.0",
     "three-stdlib": "^2.35.16",
-    "vue": "^3.4.0",
-    "vue-router": "^4.3.0"
+    "vue": "^3.4.0"
   },
   "devDependencies": {
-    "@types/three": "^0.172.0",
-    "@vitejs/plugin-vue": "^5.0.0",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.2.10"
+    "@types/three": "^0.172.0"
   }
 }

@@ -1,17 +1,17 @@
 ---
 title: Installation
-description: Learn how to use vue-three-fiber locally today
+description: Learn how to use vue-threejs locally today
 ---
 
-> [!IMPORTANT] > `@vue-three/fiber` is not published to npm yet. The package names used throughout the docs describe the intended public interface, but today you should use the repo locally.
+> [!IMPORTANT] > `@bluera/vue-threejs` is not published to npm yet. The package names used throughout the docs describe the intended public interface, but today you should use the repo locally.
 
 ## Use the repo locally
 
 Clone the repository, install dependencies, and build the workspace:
 
 ```bash
-git clone https://github.com/chrisbraddock/vue-three-fiber.git
-cd vue-three-fiber
+git clone https://github.com/blueraai/vue-threejs.git
+cd vue-threejs
 yarn install
 yarn build
 ```
@@ -34,7 +34,7 @@ Example `package.json` dependencies:
 ```json
 {
   "dependencies": {
-    "@vue-three/fiber": "file:../vue-three-fiber/packages/fiber",
+    "@bluera/vue-threejs": "file:../vue-threejs/packages/fiber",
     "three": "^0.172.0",
     "vue": "^3.3.0"
   }
@@ -44,7 +44,7 @@ Example `package.json` dependencies:
 Then install dependencies in your app as usual and keep the import path unchanged:
 
 ```ts
-import { Canvas, useFrame } from '@vue-three/fiber'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
 ```
 
 > [!WARNING]
@@ -71,7 +71,7 @@ npm create vite my-app
 # Install dependencies in your app
 cd my-app
 npm install three vue
-npm install ../vue-three-fiber/packages/fiber
+npm install ../vue-threejs/packages/fiber
 
 # Start development server
 npm run dev
@@ -104,7 +104,7 @@ You can use Vue Three Fiber with browser-ready ES Modules from [esm.sh](https://
 
 <script type="module">
   import { createApp, ref, h } from 'https://esm.sh/vue'
-  import { createRoot, extend } from 'https://esm.sh/@vue-three/fiber'
+  import { createRoot, extend } from 'https://esm.sh/@bluera/vue-threejs'
   import * as THREE from 'https://esm.sh/three'
 
   extend(THREE)

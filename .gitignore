@@ -31,6 +31,12 @@ console-inline-basic.txt
 reparenting-console.txt
 resetprops-console.txt
 
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+e2e/.auth/
+
 # Bluera plugins - shared config committed, local/state ignored
 .bluera/
 !.bluera/bluera-base/
@@ -42,3 +48,6 @@ resetprops-console.txt
 !.bluera/bluera-knowledge/stores.config.json
 # Claude Code local files (not committed)
 *.local.md
+*.png
+test-results/
+playwright-report/

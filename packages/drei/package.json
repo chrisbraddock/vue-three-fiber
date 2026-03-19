@@ -1,0 +1,24 @@
+{
+  "name": "@bluera/vue-threejs-drei",
+  "version": "1.0.0",
+  "description": "Vue-native helpers for @bluera/vue-threejs",
+  "license": "MIT",
+  "main": "dist/bluera-vue-threejs-drei.cjs.js",
+  "module": "dist/bluera-vue-threejs-drei.esm.js",
+  "types": "dist/bluera-vue-threejs-drei.cjs.d.ts",
+  "sideEffects": false,
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "dependencies": {
+    "three-stdlib": "^2.35.16"
+  },
+  "peerDependencies": {
+    "vue": ">=3.3",
+    "three": ">=0.156",
+    "@bluera/vue-threejs": ">=1.0.0",
+    "troika-three-text": ">=0.49"
+  }
+}
