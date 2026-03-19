@@ -1,9 +1,9 @@
 ---
 title: Vue Divergences
-description: How Vue Three Fiber differs from react-three-fiber
+description: How vue-threejs differs from react-three-fiber
 ---
 
-Vue Three Fiber is a Vue port of [`react-three-fiber`](https://github.com/pmndrs/react-three-fiber), but a few behaviors differ because Vue's renderer architecture is different from React's. This page documents the main differences from `react-three-fiber` and what to do about them.
+vue-threejs is a Vue port of [`react-three-fiber`](https://github.com/pmndrs/react-three-fiber), but a few behaviors differ because Vue's renderer architecture is different from React's. This page documents the main differences from `react-three-fiber` and what to do about them.
 
 ## Refs
 
@@ -38,7 +38,7 @@ Vue's behavior avoids jarring visual disappearances during loading transitions. 
 
 ### What to do
 
-Use Vue's `<Suspense>` as documented. If you need explicit control over what happens during loading transitions — showing placeholders, fading between scenes, or removing old content — higher-level scene transition components (`SceneTransition`, `ResourceBoundary`) are planned for a `@vue-three/extras` package. These will provide explicit transition strategies (`keep-previous`, `replace`, `manual`) as component props rather than hidden renderer behavior.
+Use Vue's `<Suspense>` as documented. If you need explicit control over what happens during loading transitions — showing placeholders, fading between scenes, or removing old content — higher-level scene transition components (`SceneTransition`, `ResourceBoundary`) are planned for a `@bluera/vue-threejs-extras` package. These will provide explicit transition strategies (`keep-previous`, `replace`, `manual`) as component props rather than hidden renderer behavior.
 
 In the meantime, you can build similar patterns using Vue's built-in tools:
 
@@ -51,7 +51,7 @@ In the meantime, you can build similar patterns using Vue's built-in tools:
 `flushSync` synchronously flushes pending reactive updates to the Three.js scene graph. After `flushSync(fn)` returns, the scene reflects the state changes made inside `fn`.
 
 ```ts
-import { flushSync } from '@vue-three/fiber'
+import { flushSync } from '@bluera/vue-threejs'
 
 flushSync(() => {
   positionX.value = 42

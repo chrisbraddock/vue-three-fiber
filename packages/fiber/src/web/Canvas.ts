@@ -7,6 +7,7 @@ import {
   h,
   onErrorCaptured,
   provide,
+  inject,
   getCurrentInstance,
   type PropType,
 } from 'vue'
@@ -15,12 +16,19 @@ import { extend } from '../core/reconciler'
 import { createRoot, unmountComponentAtNode, type RenderProps } from '../core/renderer'
 import { createPointerEvents } from './events'
 import type { DomEvent } from '../core/events'
+import type { FiberPluginEntry } from '../plugins/types'
+import { FIBER_APP_PLUGIN_REGISTRY, type FiberAppPluginRegistry } from '../plugins/registry'
+import { mergePluginEntries } from '../plugins/runtime'
 
 export interface CanvasProps extends Omit<RenderProps<HTMLCanvasElement>, 'size'> {
   /** The target where events are being subscribed to, default: the div that wraps canvas */
   eventSource?: HTMLElement
   /** The event prefix that is cast into canvas pointer x/y events, default: "offset" */
   eventPrefix?: 'offset' | 'client' | 'page' | 'layer' | 'screen'
+  /** Canvas-level plugin entries (merged with app-level registry) */
+  plugins?: FiberPluginEntry[]
+  /** Whether to inherit app-level plugins (default: true) */
+  inheritPlugins?: boolean
 }
 
 /**
@@ -47,11 +55,18 @@ export const Canvas = defineComponent({
     eventPrefix: String as PropType<'offset' | 'client' | 'page' | 'layer' | 'screen'>,
     onCreated: Function,
     onPointerMissed: Function,
+    plugins: { type: Array as PropType<FiberPluginEntry[]>, default: () => [] },
+    inheritPlugins: { type: Boolean, default: true },
   },
   setup(props, { slots, attrs, expose }) {
     const owner = getCurrentInstance()
     // Create a known catalogue of Threejs-native elements
     extend(THREE as any)
+
+    // Inject app-level plugin registry and compute merged entries
+    const appRegistry = inject<FiberAppPluginRegistry | undefined>(FIBER_APP_PLUGIN_REGISTRY, undefined)
+    const getMergedPlugins = () =>
+      mergePluginEntries(appRegistry?.entries ?? [], props.plugins ?? [], props.inheritPlugins !== false)
 
     const collectProvideEntries = (
       source?: Record<PropertyKey, unknown>,
@@ -182,6 +197,7 @@ export const Canvas = defineComponent({
 
         root.render(h(ContextBridge, null, { default: () => slots.default?.() }), {
           appContext: owner?.appContext ?? null,
+          plugins: getMergedPlugins(),
         })
       },
       { deep: true },

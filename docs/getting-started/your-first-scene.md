@@ -1,17 +1,17 @@
 ---
 title: Your first scene
-description: This guide will help you setup your first Vue Three Fiber scene and introduce you to its core concepts.
+description: This guide will help you setup your first vue-threejs scene and introduce you to its core concepts.
 ---
 
 This tutorial will assume some Vue knowledge.
 
 ## Setting up the Canvas
 
-We'll start by importing the `<Canvas />` component from `@vue-three/fiber` and putting it in our Vue component.
+We'll start by importing the `<Canvas />` component from `@bluera/vue-threejs` and putting it in our Vue component.
 
 ```vue
 <script setup>
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 </script>
 
 <template>
@@ -157,7 +157,7 @@ Please refer to the API for [a deeper explanation](/API/objects).
 
 ```vue
 <script setup>
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 </script>
 
 <template>

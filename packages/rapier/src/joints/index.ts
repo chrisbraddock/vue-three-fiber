@@ -1,0 +1,6 @@
+export { FixedJoint } from './FixedJoint'
+export { SphericalJoint } from './SphericalJoint'
+export { RevoluteJoint } from './RevoluteJoint'
+export { PrismaticJoint } from './PrismaticJoint'
+export { RopeJoint } from './RopeJoint'
+export { SpringJoint } from './SpringJoint'

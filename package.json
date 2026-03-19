@@ -4,13 +4,13 @@
   "description": "Workspace for vue-three-fiber",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/chrisbraddock/vue-three-fiber#readme",
+  "homepage": "https://github.com/blueraai/vue-threejs#readme",
   "bugs": {
-    "url": "https://github.com/chrisbraddock/vue-three-fiber/issues"
+    "url": "https://github.com/blueraai/vue-threejs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisbraddock/vue-three-fiber.git"
+    "url": "git+https://github.com/blueraai/vue-threejs.git"
   },
   "workspaces": [
     "packages/*",
@@ -35,7 +35,8 @@
     "changeset:add": "changeset add",
     "postinstall": "preconstruct dev",
     "build": "preconstruct build",
-    "examples": "yarn workspace vue-three-fiber-example dev",
+    "examples": "npm run docs:dev",
+    "examples:build": "npm run docs:build",
     "dev": "preconstruct dev",
     "prepare": "husky install",
     "eslint": "eslint --no-error-on-unmatched-pattern packages/**/src/**/*.{ts,tsx,vue}",
@@ -51,6 +52,8 @@
     "analyze-test": "cd packages/test-renderer && npm publish --dry-run --cache ../../.npm-cache",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
@@ -61,6 +64,8 @@
     "@babel/preset-typescript": "^7.16.7",
     "@changesets/changelog-git": "^0.1.11",
     "@changesets/cli": "^2.22.0",
+    "@dimforge/rapier3d-compat": "^0.19.3",
+    "@playwright/test": "^1.58.2",
     "@preconstruct/cli": "^2.1.5",
     "@types/three": "^0.172.0",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -76,10 +81,13 @@
     "husky": "^7.0.4",
     "jsdom": "^25.0.0",
     "lint-staged": "^12.3.7",
+    "postprocessing": "^6.38.3",
     "prettier": "^2.6.1",
     "pretty-quick": "^3.1.3",
+    "stats.js": "^0.17.0",
     "three": "^0.172.0",
     "three-stdlib": "^2.35.16",
+    "troika-three-text": "^0.52.4",
     "typescript": "^4.6.3",
     "vite": "^6.4.1",
     "vitepress": "^1.6.4",

@@ -31,6 +31,12 @@ console-inline-basic.txt
 reparenting-console.txt
 resetprops-console.txt
 
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+e2e/.auth/
+
 # Bluera plugins - shared config committed, local/state ignored
 .bluera/
 !.bluera/bluera-base/
@@ -42,3 +48,15 @@ resetprops-console.txt
 !.bluera/bluera-knowledge/stores.config.json
 # Claude Code local files (not committed)
 *.local.md
+*.png
+test-results/
+playwright-report/
+
+# Planning and internal docs
+LAST_COMMIT_EVALUATION_REPORT.md
+PARITY_EXECUTION_PLAN.md
+PROJECT_ORIGIN.md
+RC1-REPORT-*.md
+VUE_NATIVE_EVOLUTION_PLAN.md
+vue-three-fiber-plugin-system-spec.md
+vue-three-fiber-vue-first-plan.md

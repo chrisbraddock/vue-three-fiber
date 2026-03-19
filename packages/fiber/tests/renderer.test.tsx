@@ -41,7 +41,7 @@ class Mock extends THREE.Group {
   }
 }
 
-declare module '@vue-three/fiber' {
+declare module '@bluera/vue-threejs' {
   interface ThreeElements {
     mock: ThreeElement<typeof Mock>
     threeRandom: ThreeElement<typeof THREE.Group>

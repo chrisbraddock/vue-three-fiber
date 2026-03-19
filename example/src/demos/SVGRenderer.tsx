@@ -1,6 +1,6 @@
-import { Canvas, useFrame } from '@vue-three/fiber'
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
-import { Mesh } from 'three'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
+import { defineComponent, h, onBeforeUnmount, onMounted, ref, shallowRef } from 'vue'
+import { Color, Mesh } from 'three'
 import { SVGRenderer } from 'three-stdlib'
 
 const TorusKnot = defineComponent({
@@ -22,34 +22,69 @@ const TorusKnot = defineComponent({
   },
 })
 
-const svgRenderer = new SVGRenderer()
-svgRenderer.domElement.style.position = 'absolute'
-svgRenderer.domElement.style.top = '0'
-svgRenderer.domElement.style.left = '0'
-
-// Wrap the SVG element in an HTMLDivElement so it can be used for event sourcing
-const eventWrapper = document.createElement('div')
-eventWrapper.style.position = 'absolute'
-eventWrapper.style.top = '0'
-eventWrapper.style.left = '0'
-eventWrapper.style.width = '100%'
-eventWrapper.style.height = '100%'
-eventWrapper.appendChild(svgRenderer.domElement)
-
 export default defineComponent({
   setup() {
+    const containerRef = ref<HTMLDivElement | null>(null)
+    const ready = ref(false)
+    const rendererRef = shallowRef<SVGRenderer | null>(null)
+    const wrapperRef = shallowRef<HTMLDivElement | null>(null)
+
     onMounted(() => {
-      document.body.appendChild(eventWrapper)
-    })
-    onUnmounted(() => {
-      document.body.removeChild(eventWrapper)
+      const container = containerRef.value
+      if (!container) return
+
+      const renderer = new SVGRenderer()
+      renderer.domElement.style.position = 'absolute'
+      renderer.domElement.style.top = '0'
+      renderer.domElement.style.left = '0'
+      renderer.setClearColor(new Color('#191b24'), 1)
+
+      const wrapper = document.createElement('div')
+      wrapper.style.position = 'absolute'
+      wrapper.style.top = '0'
+      wrapper.style.left = '0'
+      wrapper.style.width = '100%'
+      wrapper.style.height = '100%'
+      wrapper.style.background = '#191b24'
+      wrapper.appendChild(renderer.domElement)
+      container.appendChild(wrapper)
+
+      rendererRef.value = renderer
+      wrapperRef.value = wrapper
+      ready.value = true
     })
 
-    return () => (
-      <Canvas gl={svgRenderer} camera={{ position: [0, 0, 50] }} eventSource={eventWrapper}>
-        <color attach="background" args={['#dedddf']} />
-        <TorusKnot />
-      </Canvas>
-    )
+    onBeforeUnmount(() => {
+      if (wrapperRef.value && containerRef.value) {
+        containerRef.value.removeChild(wrapperRef.value)
+      }
+      rendererRef.value = null
+      wrapperRef.value = null
+      ready.value = false
+    })
+
+    return () =>
+      h(
+        'div',
+        {
+          ref: containerRef,
+          style: { position: 'relative', width: '100%', height: '100%', overflow: 'hidden', background: '#191b24' },
+        },
+        ready.value && rendererRef.value && wrapperRef.value
+          ? [
+              h(
+                Canvas,
+                {
+                  gl: rendererRef.value,
+                  camera: { position: [0, 0, 50] },
+                  eventSource: wrapperRef.value,
+                },
+                {
+                  default: () => [h(TorusKnot)],
+                },
+              ),
+            ]
+          : [],
+      )
   },
 })

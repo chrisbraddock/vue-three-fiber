@@ -1,4 +1,4 @@
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 import { defineComponent, ref } from 'vue'
 
 const SphereComponent = defineComponent({
@@ -33,33 +33,37 @@ export default defineComponent({
   setup() {
     return () => (
       <Canvas orthographic camera={{ position: [0, 0, 20], zoom: 150 }} style={{ background: '#272730' }}>
-        <group
-          position={[-1.25, 0, 0]}
-          onPointerOver={() => console.log('group1 over')}
-          onPointerOut={() => console.log('group1 out')}>
-          <group
-            onPointerOver={() => console.log('      group2 over')}
-            onPointerOut={() => console.log('      group2 out')}>
-            <mesh
-              renderOrder={8}
-              onPointerOver={() => console.log('      white mesh over')}
-              onPointerOut={() => console.log('      white mesh out')}>
-              <sphereGeometry args={[1, 32, 32]} />
-              <meshBasicMaterial color="white" transparent opacity={0.2} />
-            </mesh>
-            <mesh
-              renderOrder={7}
-              onPointerOver={() => console.log('        black mesh over')}
-              onPointerOut={() => console.log('        black mesh out')}>
-              <sphereGeometry args={[0.7, 32, 32]} />
-              <meshBasicMaterial color="black" transparent opacity={0.2} />
-            </mesh>
-          </group>
-        </group>
-        <group position={[1.25, 0, 0]}>
-          <Circle />
-          <SphereComponent />
-        </group>
+        {{
+          default: () => [
+            <group
+              position={[-1.25, 0, 0]}
+              onPointerOver={() => console.log('group1 over')}
+              onPointerOut={() => console.log('group1 out')}>
+              <group
+                onPointerOver={() => console.log('      group2 over')}
+                onPointerOut={() => console.log('      group2 out')}>
+                <mesh
+                  renderOrder={8}
+                  onPointerOver={() => console.log('      white mesh over')}
+                  onPointerOut={() => console.log('      white mesh out')}>
+                  <sphereGeometry args={[1, 32, 32]} />
+                  <meshBasicMaterial color="white" transparent opacity={0.2} />
+                </mesh>
+                <mesh
+                  renderOrder={7}
+                  onPointerOver={() => console.log('        black mesh over')}
+                  onPointerOut={() => console.log('        black mesh out')}>
+                  <sphereGeometry args={[0.7, 32, 32]} />
+                  <meshBasicMaterial color="black" transparent opacity={0.2} />
+                </mesh>
+              </group>
+            </group>,
+            <group position={[1.25, 0, 0]}>
+              <Circle />
+              <SphereComponent />
+            </group>,
+          ],
+        }}
       </Canvas>
     )
   },

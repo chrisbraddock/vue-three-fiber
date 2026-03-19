@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@vue-three/fiber'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
 import { defineComponent, ref } from 'vue'
 import { BoxGeometry, Group, Mesh, MeshBasicMaterial } from 'three'
 
@@ -47,10 +47,14 @@ export default defineComponent({
   setup() {
     return () => (
       <Canvas>
-        <group>
-          <Box position={[-0.5, 0, 0]} />
-        </group>
-        <Box2 position={[0.5, 0, 0]} />
+        {{
+          default: () => [
+            <group>
+              <Box position={[-0.5, 0, 0]} />
+            </group>,
+            <Box2 position={[0.5, 0, 0]} />,
+          ],
+        }}
       </Canvas>
     )
   },

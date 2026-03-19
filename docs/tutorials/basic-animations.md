@@ -15,7 +15,7 @@ It's important to remember that **Fiber composables can only be called inside a 
 
 ```vue
 <script setup>
-import { useFrame } from '@vue-three/fiber'
+import { useFrame } from '@bluera/vue-threejs'
 
 useFrame(() => {
   console.log("Hey, I'm executing every frame!")
@@ -78,7 +78,7 @@ Let's have a closer look:
 - We are assigning our time-dependent value to the `rotation` on the `x` axis, meaning our object will now infinitely rotate between -1 and 1 radians around the x axis!
 
 > [!TIP]
-> Template refs in Vue Three Fiber receive a proxy-backed handle, not the raw `THREE.Object3D`. This works seamlessly for in-scene mutation like the example above. If you need the actual Three.js object — for instance to pass to a physics engine or compare identity — see the [Object Handles](/tutorials/object-handles) tutorial.
+> Template refs in vue-threejs receive a proxy-backed handle, not the raw `THREE.Object3D`. This works seamlessly for in-scene mutation like the example above. If you need the actual Three.js object — for instance to pass to a physics engine or compare identity — see the [Object Handles](/tutorials/object-handles) tutorial.
 
 <Codesandbox id="29gxw" />
 

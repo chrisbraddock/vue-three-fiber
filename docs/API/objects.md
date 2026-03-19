@@ -1,6 +1,6 @@
 ---
 title: Objects, properties and constructor arguments
-description: All the effective ways of using Vue Three Fiber
+description: All the effective ways of using vue-threejs
 ---
 
 ## Declaring objects
@@ -34,7 +34,7 @@ The problem is that all of these properties will always be re-created. Instead, 
 
 ## Constructor arguments
 
-In three.js objects are classes that are instantiated. These classes can receive one-time constructor arguments (`new THREE.SphereGeometry(1, 32)`), and properties (`someObject.visible = true`). In Vue Three Fiber, constructor arguments are always passed as an array via `args`. If args change later on, the object must naturally get reconstructed from scratch!
+In three.js objects are classes that are instantiated. These classes can receive one-time constructor arguments (`new THREE.SphereGeometry(1, 32)`), and properties (`someObject.visible = true`). In vue-threejs, constructor arguments are always passed as an array via `args`. If args change later on, the object must naturally get reconstructed from scratch!
 
 ```vue
 <template>
@@ -189,10 +189,10 @@ const mesh = new THREE.Mesh(geometry, material)
 
 ## Using 3rd-party objects declaratively
 
-The `extend` function extends Vue Three Fiber's catalogue of elements. Components added this way can then be referenced in the scene-graph using camel casing similar to other primitives.
+The `extend` function extends vue-threejs's catalogue of elements. Components added this way can then be referenced in the scene-graph using camel casing similar to other primitives.
 
 ```js
-import { extend } from '@vue-three/fiber'
+import { extend } from '@bluera/vue-threejs'
 import { OrbitControls, TransformControls } from 'three-stdlib'
 extend({ OrbitControls, TransformControls })
 ```
@@ -204,11 +204,11 @@ extend({ OrbitControls, TransformControls })
 </template>
 ```
 
-If you're using TypeScript, you'll also need to [extend the element namespace](/tutorials/v9-migration-guide#threeelements).
+If you're using TypeScript, you'll also need to [extend the element namespace](/API/typescript).
 
 ## Disposal
 
-Freeing resources is a [manual chore in `three.js`](https://threejs.org/docs/#manual/en/introduction/How-to-dispose-of-objects), but Vue is aware of object-lifecycles, hence Vue Three Fiber will attempt to free resources for you by calling `object.dispose()`, if present, on all unmounted objects.
+Freeing resources is a [manual chore in `three.js`](https://threejs.org/docs/#manual/en/introduction/How-to-dispose-of-objects), but Vue is aware of object-lifecycles, hence vue-threejs will attempt to free resources for you by calling `object.dispose()`, if present, on all unmounted objects.
 
 If you manage assets by yourself, globally or in a cache, this may _not_ be what you want. You can switch it off by placing `dispose={null}` onto meshes, materials, etc, or even on parent containers like groups, it is now valid for the entire tree.
 

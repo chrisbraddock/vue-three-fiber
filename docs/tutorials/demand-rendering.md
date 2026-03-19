@@ -3,7 +3,7 @@ title: Demand Rendering
 description: Render only when something changes using watchInvalidate
 ---
 
-By default, Vue Three Fiber renders every frame. For scenes that spend most of their time idle — product viewers, editors, data visualizations — this wastes GPU cycles and battery. Setting `frameloop="demand"` tells the renderer to only produce frames when explicitly requested.
+By default, vue-threejs renders every frame. For scenes that spend most of their time idle — product viewers, editors, data visualizations — this wastes GPU cycles and battery. Setting `frameloop="demand"` tells the renderer to only produce frames when explicitly requested.
 
 ## Setting up demand mode
 
@@ -24,7 +24,7 @@ The `watchInvalidate` composable bridges Vue reactivity and the render loop. It 
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { watchInvalidate } from '@vue-three/fiber'
+import { watchInvalidate } from '@bluera/vue-threejs'
 
 const color = ref('orange')
 const position = ref<[number, number, number]>([0, 0, 0])
@@ -50,7 +50,7 @@ Here is a typical demand-mode scene: a product viewer where the user rotates the
 ```vue
 <!-- ProductViewer.vue -->
 <script setup lang="ts">
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 import { ref } from 'vue'
 import Product from './Product.vue'
 
@@ -75,7 +75,7 @@ const color = ref('#4488ff')
 ```vue
 <!-- Product.vue -->
 <script setup lang="ts">
-import { watchInvalidate } from '@vue-three/fiber'
+import { watchInvalidate } from '@bluera/vue-threejs'
 
 const props = defineProps<{ color: string }>()
 
@@ -94,7 +94,7 @@ watchInvalidate(() => props.color)
 The scene only renders when:
 
 - The color picker changes the color
-- Vue Three Fiber internally detects a resize
+- vue-threejs internally detects a resize
 
 No wasted frames between interactions.
 
@@ -105,7 +105,7 @@ If you also mutate objects directly (orbit controls, physics, etc.), you need to
 ```vue
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useThree } from '@vue-three/fiber'
+import { useThree } from '@bluera/vue-threejs'
 
 const invalidate = useThree((state) => state.invalidate)
 const controlsRef = ref()

@@ -1,4 +1,4 @@
-import { Canvas, useThree, useRenderCommit } from '@vue-three/fiber'
+import { Canvas, useThree, useRenderCommit } from '@bluera/vue-threejs'
 import { defineComponent, ref } from 'vue'
 
 const colors = ['orange', 'hotpink', 'cyan', 'lime', 'yellow', 'red', 'blue', 'purple', 'green', 'coral']
@@ -33,9 +33,13 @@ export default defineComponent({
   setup() {
     return () => (
       <Canvas>
-        <ambientLight intensity={Math.PI * 0.5} />
-        <spotLight decay={0} position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <Capture />
+        {{
+          default: () => [
+            <ambientLight intensity={Math.PI * 0.5} />,
+            <spotLight decay={0} position={[10, 10, 10]} angle={0.15} penumbra={1} />,
+            <Capture />,
+          ],
+        }}
       </Canvas>
     )
   },

@@ -1,4 +1,4 @@
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { Layers } from 'three'
 
@@ -54,8 +54,12 @@ export default defineComponent({
 
     return () => (
       <Canvas camera={{ layers: visibleLayers }}>
-        <Box position={[-0.5, 0, 0]} layers={!visible.value ? invisibleLayer : visibleLayers} />
-        <Sphere position={[0.5, 0, 0]} layers={visible.value ? invisibleLayer : visibleLayers} />
+        {{
+          default: () => [
+            <Box position={[-0.5, 0, 0]} layers={!visible.value ? invisibleLayer : visibleLayers} />,
+            <Sphere position={[0.5, 0, 0]} layers={visible.value ? invisibleLayer : visibleLayers} />,
+          ],
+        }}
       </Canvas>
     )
   },

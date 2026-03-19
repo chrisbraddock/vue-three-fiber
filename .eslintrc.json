@@ -23,7 +23,7 @@
       },
       "alias": {
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".vue"],
-        "map": [["@vue-three/fiber", "./packages/fiber/src"]]
+        "map": [["@bluera/vue-threejs", "./packages/fiber/src"]]
       }
     }
   },

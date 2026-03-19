@@ -1,8 +1,8 @@
-# vue-three-fiber
+# vue-threejs
 
-`vue-three-fiber` is a Vue 3 port of [react-three-fiber](https://github.com/pmndrs/react-three-fiber), the React renderer for [Three.js](https://threejs.org/).
+`vue-threejs` is a Vue 3 port of [react-three-fiber](https://github.com/pmndrs/react-three-fiber), the React renderer for [Three.js](https://threejs.org/).
 
-It provides declarative Three.js scene authoring for Vue, keeping high API overlap with R3F where practical and adding Vue-native APIs where Vue offers a better fit: explicit object handles, render lifecycle composables, DOM/scene slot composition, and reactive demand-render helpers. See [Vue Divergences](docs/advanced/vue-divergences.md) for where and why the two renderers differ.
+It provides declarative Three.js scene authoring for Vue, keeping high API overlap with R3F where practical and adding Vue-native APIs where Vue offers a better fit: explicit object handles, render lifecycle composables, DOM/scene slot composition, and reactive demand-render helpers. See [Vue Divergences](https://blueraai.github.io/vue-threejs/advanced/vue-divergences) for where and why the two renderers differ.
 
 Requires `vue >= 3.3` and `three >= 0.156`.
 
@@ -14,28 +14,32 @@ Requires `vue >= 3.3` and `three >= 0.156`.
 - DOM and 3D stay in one app through slots and `provide` / `inject`
 - Demand rendering, loader caching, portals, and a test renderer are included
 
-## Local Usage
-
-There is no published npm package for this repo yet. To work with it locally:
+## Installation
 
 ```bash
-git clone https://github.com/chrisbraddock/vue-three-fiber.git
-cd vue-three-fiber
+npm install @bluera/vue-threejs three vue
+```
+
+## Development
+
+To work on the renderer locally:
+
+```bash
+git clone https://github.com/blueraai/vue-threejs.git
+cd vue-threejs
 yarn install
 yarn build
 ```
 
-Useful local commands:
+Useful commands:
 
 ```bash
-yarn examples      # run the example app
+yarn examples      # run the docs site with integrated examples
 yarn docs:dev      # run the docs site locally
 yarn test          # run the test suite
 yarn typecheck     # run TypeScript checks
 yarn eslint        # lint source files
 ```
-
-If you want to consume the renderer from another local project, build this repo first and link to `packages/fiber` as a local package.
 
 ## Quick Start
 
@@ -46,7 +50,7 @@ Composables like `useFrame` and `useObjectRef` must be used inside components re
 ```vue
 <script setup lang="ts">
 import type { Mesh } from 'three'
-import { useFrame, useObjectRef } from '@vue-three/fiber'
+import { useFrame, useObjectRef } from '@bluera/vue-threejs'
 
 const box = useObjectRef<Mesh>()
 
@@ -70,7 +74,7 @@ useFrame((_, delta) => {
 
 ```vue
 <script setup lang="ts">
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 import RotatingBox from './RotatingBox.vue'
 </script>
 
@@ -103,14 +107,28 @@ import RotatingBox from './RotatingBox.vue'
 - Vue Suspense keeps previous content visible during async re-entrance. Use explicit loading and scene transition patterns when you need tighter control.
 - For new async coordination code, prefer `useRenderCommit` and `useNextFrame` over centering everything on `flushSync`.
 
+## Ecosystem
+
+vue-threejs includes Vue ports of popular [Poimandres](https://github.com/pmndrs) ecosystem packages, connected through a [plugin system](https://blueraai.github.io/vue-threejs/ecosystem/plugins):
+
+| Package                                                          | Ported from                                                                                                    | Description                                        |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| [`@bluera/vue-threejs-drei`](packages/drei/)                     | [`@react-three/drei`](https://github.com/pmndrs/drei)                                                          | Controls, loaders, staging, materials, and helpers |
+| [`@bluera/vue-threejs-postprocessing`](packages/postprocessing/) | [`@react-three/postprocessing`](https://github.com/pmndrs/react-postprocessing)                                | GPU postprocessing effects                         |
+| [`@bluera/vue-threejs-rapier`](packages/rapier/)                 | [`@react-three/rapier`](https://github.com/pmndrs/react-three-rapier)                                          | Rigid-body physics with Rapier                     |
+| [`@bluera/vue-threejs-test-renderer`](packages/test-renderer/)   | [`@react-three/test-renderer`](https://github.com/pmndrs/react-three-fiber/tree/master/packages/test-renderer) | Unit testing in Node                               |
+
+All upstream packages are MIT-licensed by [Poimandres](https://github.com/pmndrs). Original copyright notices are preserved in the project [LICENSE](LICENSE).
+
 ## Docs
 
-- [Introduction](https://docs.pmnd.rs/vue-three-fiber/getting-started/introduction)
-- [Vue Divergences](https://docs.pmnd.rs/vue-three-fiber/advanced/vue-divergences)
-- [Object Handles](https://docs.pmnd.rs/vue-three-fiber/tutorials/object-handles)
-- [Demand Rendering](https://docs.pmnd.rs/vue-three-fiber/tutorials/demand-rendering)
-- [DOM Overlays](https://docs.pmnd.rs/vue-three-fiber/tutorials/dom-overlays)
-- [Scene Transitions](https://docs.pmnd.rs/vue-three-fiber/tutorials/scene-transitions)
+- [Docs Home](https://blueraai.github.io/vue-threejs/)
+- [Introduction](https://blueraai.github.io/vue-threejs/getting-started/introduction)
+- [Vue Divergences](https://blueraai.github.io/vue-threejs/advanced/vue-divergences)
+- [Object Handles](https://blueraai.github.io/vue-threejs/tutorials/object-handles)
+- [Demand Rendering](https://blueraai.github.io/vue-threejs/tutorials/demand-rendering)
+- [DOM Overlays](https://blueraai.github.io/vue-threejs/tutorials/dom-overlays)
+- [Scene Transitions](https://blueraai.github.io/vue-threejs/tutorials/scene-transitions)
 
 ## Status
 
@@ -126,4 +144,4 @@ The current direction is:
 
 ## Credits
 
-Built on the architecture and API design of [pmndrs/react-three-fiber](https://github.com/pmndrs/react-three-fiber) and the [Poimandres](https://github.com/pmndrs) ecosystem.
+Built on the architecture and API design of [pmndrs/react-three-fiber](https://github.com/pmndrs/react-three-fiber) and the [Poimandres](https://github.com/pmndrs) ecosystem. Ecosystem packages are ported from [drei](https://github.com/pmndrs/drei), [react-postprocessing](https://github.com/pmndrs/react-postprocessing), and [react-three-rapier](https://github.com/pmndrs/react-three-rapier).

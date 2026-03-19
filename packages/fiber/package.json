@@ -1,5 +1,5 @@
 {
-  "name": "@vue-three/fiber",
+  "name": "@bluera/vue-threejs",
   "version": "1.0.0",
   "description": "A Vue.js renderer for Three.js",
   "keywords": [
@@ -11,16 +11,16 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chrisbraddock/vue-three-fiber/issues"
+    "url": "https://github.com/blueraai/vue-threejs/issues"
   },
-  "homepage": "https://github.com/chrisbraddock/vue-three-fiber#readme",
+  "homepage": "https://github.com/blueraai/vue-threejs#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisbraddock/vue-three-fiber.git"
+    "url": "git+https://github.com/blueraai/vue-threejs.git"
   },
-  "main": "dist/vue-three-fiber.cjs.js",
-  "module": "dist/vue-three-fiber.esm.js",
-  "types": "dist/vue-three-fiber.cjs.d.ts",
+  "main": "dist/bluera-vue-threejs.cjs.js",
+  "module": "dist/bluera-vue-threejs.esm.js",
+  "types": "dist/bluera-vue-threejs.cjs.d.ts",
   "sideEffects": false,
   "preconstruct": {
     "entrypoints": [

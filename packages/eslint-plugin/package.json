@@ -1,7 +1,8 @@
 {
-  "name": "@vue-three/eslint-plugin",
+  "name": "@bluera/eslint-plugin-vue-threejs",
   "version": "1.0.0",
-  "description": "ESLint rules for @vue-three/fiber.",
+  "private": true,
+  "description": "ESLint rules for @bluera/vue-threejs.",
   "keywords": [
     "vue",
     "renderer",
@@ -12,16 +13,16 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chrisbraddock/vue-three-fiber/issues"
+    "url": "https://github.com/blueraai/vue-threejs/issues"
   },
-  "homepage": "https://github.com/chrisbraddock/vue-three-fiber/tree/master/packages/eslint-plugin#readme",
+  "homepage": "https://github.com/blueraai/vue-threejs/tree/master/packages/eslint-plugin#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisbraddock/vue-three-fiber.git"
+    "url": "git+https://github.com/blueraai/vue-threejs.git"
   },
-  "main": "dist/vue-three-eslint-plugin.cjs.js",
-  "module": "dist/vue-three-eslint-plugin.esm.js",
-  "types": "dist/vue-three-eslint-plugin.cjs.d.ts",
+  "main": "dist/bluera-eslint-plugin-vue-threejs.cjs.js",
+  "module": "dist/bluera-eslint-plugin-vue-threejs.esm.js",
+  "types": "dist/bluera-eslint-plugin-vue-threejs.cjs.d.ts",
   "files": [
     "dist"
   ],

@@ -1,4 +1,4 @@
-import { act } from '@vue-three/fiber'
+import { act } from '@bluera/vue-threejs'
 
 export interface WaitOptions {
   interval?: number

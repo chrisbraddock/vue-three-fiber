@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@vue-three/fiber'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
 import { defineComponent, onMounted, ref } from 'vue'
 import { Mesh } from 'three'
 
@@ -42,11 +42,15 @@ export default defineComponent({
 
     return () => (
       <Canvas>
-        <ambientLight intensity={Math.PI / 2} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box position={[-1.2, 0, 0]} />
-        {visible.value && <Box color="skyblue" position={[1.2, 0, 0]} />}
+        {{
+          default: () => [
+            <ambientLight intensity={Math.PI / 2} />,
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />,
+            <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />,
+            <Box position={[-1.2, 0, 0]} />,
+            visible.value && <Box color="skyblue" position={[1.2, 0, 0]} />,
+          ],
+        }}
       </Canvas>
     )
   },

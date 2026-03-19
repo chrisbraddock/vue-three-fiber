@@ -1,4 +1,4 @@
-import type { RootStore } from '@vue-three/fiber'
+import type { RootStore } from '@bluera/vue-threejs'
 
 import { toEventHandlerName } from './helpers/strings'
 

@@ -4,7 +4,7 @@ description: This is an advanced guide on the inner workings of Fiber, if you ar
   look at our introduction!
 ---
 
-Vue Three Fiber is a Vue <a href="https://vuejs.org/guide/extras/rendering-mechanism.html">renderer</a> for **three.js**.
+vue-threejs is a Vue <a href="https://vuejs.org/guide/extras/rendering-mechanism.html">renderer</a> for **three.js**.
 
 This means that each Fiber component will effectively create a new THREE object that will be added to a `scene`.
 Understanding how this works is not necessarily needed to use Fiber, but it will better arm you to deal with anything that you might need in your projects, reading other people's Fiber code and even help you contribute.
@@ -13,7 +13,7 @@ Let's take a small Vue example:
 
 ```vue
 <script setup>
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 </script>
 
 <template>
@@ -178,15 +178,11 @@ Every object with `onPointer` props will be added to the array of objects checke
 The ray's `origin` and `direction` are updated every time the mouse moves on the `<Canvas />` element or the window is resized.
 Fiber also handles camera switching, meaning that the raycaster will always use the currently active camera.
 
-When using the `raycast` prop, the object will instead be picked using a custom ray:
+When using the `raycast` prop, the object will instead be picked using a custom raycasting function:
 
 ```vue
-<script setup>
-import { useCamera } from '@vue-three/drei'
-</script>
-
 <template>
-  <mesh :raycast="useCamera(anotherCamera)" />
+  <mesh :raycast="customRaycastFn" />
 </template>
 ```
 

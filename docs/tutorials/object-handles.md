@@ -7,7 +7,7 @@ When you need to read or mutate a Three.js object imperatively — for instance 
 
 ## The problem with template refs
 
-In Vue Three Fiber's custom renderer, template refs receive an internal Instance proxy rather than the raw `THREE.Object3D`. Property access, method calls, and `instanceof` all work through the proxy, but the ref's value is not the THREE object itself. This matters when you need to pass the object to external libraries or compare identity.
+In vue-threejs's custom renderer, template refs receive an internal Instance proxy rather than the raw `THREE.Object3D`. Property access, method calls, and `instanceof` all work through the proxy, but the ref's value is not the THREE object itself. This matters when you need to pass the object to external libraries or compare identity.
 
 `useObjectRef` solves this by extracting the underlying THREE object and exposing it as a `ShallowRef`.
 
@@ -15,7 +15,7 @@ In Vue Three Fiber's custom renderer, template refs receive an internal Instance
 
 ```vue
 <script setup lang="ts">
-import { useObjectRef, useFrame } from '@vue-three/fiber'
+import { useObjectRef, useFrame } from '@bluera/vue-threejs'
 import type { Mesh } from 'three'
 
 const cube = useObjectRef<Mesh>()
@@ -50,7 +50,7 @@ A common need is handing the Three.js object to a physics library, animation sys
 ```vue
 <script setup lang="ts">
 import { watch } from 'vue'
-import { useObjectRef } from '@vue-three/fiber'
+import { useObjectRef } from '@bluera/vue-threejs'
 import type { Mesh } from 'three'
 
 const target = useObjectRef<Mesh>()
@@ -74,12 +74,12 @@ watch(target.object, (mesh) => {
 
 ## Handling reconstruction
 
-When a component's `args` or `object` prop changes, Vue Three Fiber destroys the old THREE object and creates a new one. `useObjectRef` handles this automatically — `object.value` updates to the new instance and any watchers fire again.
+When a component's `args` or `object` prop changes, vue-threejs destroys the old THREE object and creates a new one. `useObjectRef` handles this automatically — `object.value` updates to the new instance and any watchers fire again.
 
 ```vue
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { useObjectRef } from '@vue-three/fiber'
+import { useObjectRef } from '@bluera/vue-threejs'
 import type { Mesh } from 'three'
 
 const cube = useObjectRef<Mesh>()
@@ -110,7 +110,7 @@ The `mounted` property tells you whether the object is currently in the scene. T
 ```vue
 <script setup lang="ts">
 import { watch } from 'vue'
-import { useObjectRef } from '@vue-three/fiber'
+import { useObjectRef } from '@bluera/vue-threejs'
 import type { PointLight } from 'three'
 
 const light = useObjectRef<PointLight>()

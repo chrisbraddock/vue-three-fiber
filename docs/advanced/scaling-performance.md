@@ -1,9 +1,9 @@
 ---
 title: Scaling performance
-description: Practical performance strategies for Vue Three Fiber scenes.
+description: Practical performance strategies for vue-threejs scenes.
 ---
 
-Rendering 3D content continuously is expensive. The main performance levers in Vue Three Fiber are render cadence, object allocation, draw-call count, asset lifecycle, and adaptive quality. This page keeps the guidance focused on those concerns.
+Rendering 3D content continuously is expensive. The main performance levers in vue-threejs are render cadence, object allocation, draw-call count, asset lifecycle, and adaptive quality. This page keeps the guidance focused on those concerns.
 
 ## On-demand rendering
 
@@ -11,7 +11,7 @@ Use `frameloop="demand"` when your scene can become idle. Instead of rendering e
 
 ```ts
 import { h } from 'vue'
-import { Canvas } from '@vue-three/fiber'
+import { Canvas } from '@bluera/vue-threejs'
 
 export default () => h(Canvas, { frameloop: 'demand' })
 ```
@@ -24,7 +24,7 @@ Imperative mutations are invisible to Vue's change detection. If controls or ext
 
 ```ts
 import { onMounted, ref } from 'vue'
-import { useThree } from '@vue-three/fiber'
+import { useThree } from '@bluera/vue-threejs'
 
 const controlsRef = ref<any>(null)
 const invalidate = useThree((state) => state.invalidate)
@@ -54,13 +54,13 @@ When resources are created outside the canvas lifecycle, make sure your color-ma
 `useLoader` caches by input URL. Re-use cached assets instead of reloading and reconstructing them in multiple components.
 
 ```ts
-import { useLoader } from '@vue-three/fiber'
+import { useLoader } from '@bluera/vue-threejs'
 import { TextureLoader } from 'three'
 
 const colorMap = useLoader(TextureLoader, '/albedo.png')
 ```
 
-If the loaded payload contains a scene, Vue Three Fiber also builds named node and material maps for selective access.
+If the loaded payload contains a scene, vue-threejs also builds named node and material maps for selective access.
 
 ## Reduce draw calls
 

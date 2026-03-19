@@ -1,4 +1,4 @@
-import type { Instance } from '@vue-three/fiber'
+import type { Instance } from '@bluera/vue-threejs'
 import type { SceneGraphItem } from '../types/public'
 import type { Object3D } from 'three'
 

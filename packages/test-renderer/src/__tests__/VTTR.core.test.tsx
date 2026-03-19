@@ -1,4 +1,4 @@
-import { useFrame, type Instance } from '@vue-three/fiber'
+import { useFrame, type Instance } from '@bluera/vue-threejs'
 import { defineComponent, ref, h, Fragment } from 'vue'
 import { Group, Mesh, BoxGeometry, MeshBasicMaterial, SphereGeometry, Object3D, Material } from 'three'
 

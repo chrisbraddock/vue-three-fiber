@@ -31,7 +31,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    testPathIgnorePatterns: ['/node_modules/', '/\\.claude/', '/dist/'],
+    testPathIgnorePatterns: ['/node_modules/', '/\\.claude/', '/dist/', '/e2e/'],
+    exclude: ['node_modules', '.claude', 'dist', 'e2e'],
     setupFiles: ['./packages/shared/setupTests.ts'],
     coverage: {
       exclude: ['node_modules/', 'packages/fiber/dist', 'packages/fiber/src/index', 'packages/test-renderer/dist'],
@@ -42,14 +43,14 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: 'three', replacement: 'three' },
-      { find: /^@vue-three\/fiber$/, replacement: path.resolve(__dirname, 'packages/fiber/src/index.ts') },
-      { find: /^@vue-three\/fiber\/(.*)$/, replacement: path.resolve(__dirname, 'packages/fiber/src/$1') },
+      { find: /^@bluera\/vue-threejs$/, replacement: path.resolve(__dirname, 'packages/fiber/src/index.ts') },
+      { find: /^@bluera\/vue-threejs\/(.*)$/, replacement: path.resolve(__dirname, 'packages/fiber/src/$1') },
       {
-        find: /^@vue-three\/test-renderer$/,
+        find: /^@bluera\/vue-threejs-test-renderer$/,
         replacement: path.resolve(__dirname, 'packages/test-renderer/src/index.tsx'),
       },
       {
-        find: /^@vue-three\/test-renderer\/(.*)$/,
+        find: /^@bluera\/vue-threejs-test-renderer\/(.*)$/,
         replacement: path.resolve(__dirname, 'packages/test-renderer/$1'),
       },
     ],

@@ -3,22 +3,22 @@ title: 'Testing'
 description: How to handle unit tests
 ---
 
-Like with every other application testing is an important factor when it comes to releasing an application into the wild and when it comes to Vue Three Fiber we can use the test renderer to achieve this.
+Like with every other application testing is an important factor when it comes to releasing an application into the wild and when it comes to vue-threejs we can use the test renderer to achieve this.
 
 We will be testing the [sandbox](https://codesandbox.io/s/98ppy) we created in [events and interactions](../tutorials/events-and-interaction).
 
-## How to test Vue Three Fiber
+## How to test vue-threejs
 
 The test renderer is not published separately yet, so use it from this repo locally. If your app lives outside this monorepo, point it at the package folder directly:
 
 ```bash
-npm install --save-dev ../vue-three-fiber/packages/test-renderer
+npm install --save-dev ../vue-threejs/packages/test-renderer
 ```
 
 The import path stays the same:
 
 ```js
-import VueThreeTestRenderer from '@vue-three/test-renderer'
+import VueThreeTestRenderer from '@bluera/vue-threejs-test-renderer'
 ```
 
 Afterwards, you can add a file that ends in `.test.js` and start writing your code, because the test renderer is testing-library agnostic, so it works with libraries such as `vitest`, `jest`, `jasmine` etc.
@@ -26,7 +26,7 @@ Afterwards, you can add a file that ends in `.test.js` and start writing your co
 Let's create an `App.test.js` and set up all our test cases:
 
 ```js
-import VueThreeTestRenderer from '@vue-three/test-renderer'
+import VueThreeTestRenderer from '@bluera/vue-threejs-test-renderer'
 import { MyRotatingBox } from './App'
 
 test('mesh to have two children', async () => {
@@ -112,9 +112,9 @@ test('click event makes box bigger', async () => {
 
 If you want to learn more about the test renderer you can checkout the repo and their docs:
 
-- [Repo](https://github.com/chrisbraddock/vue-three-fiber/blob/master/packages/test-renderer)
-- [Test Renderer API](https://github.com/chrisbraddock/vue-three-fiber/blob/master/packages/test-renderer/markdown/rttr.md#create)
-- [Test Instance API](https://github.com/chrisbraddock/vue-three-fiber/blob/master/packages/test-renderer/markdown/rttr-instance.md)
+- [Repo](https://github.com/blueraai/vue-threejs/blob/master/packages/test-renderer)
+- [Test Renderer API](https://github.com/blueraai/vue-threejs/blob/master/packages/test-renderer/markdown/rttr.md#create)
+- [Test Instance API](https://github.com/blueraai/vue-threejs/blob/master/packages/test-renderer/markdown/rttr-instance.md)
 
 ## Exercises
 

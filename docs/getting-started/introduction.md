@@ -7,9 +7,11 @@ description: Vue-three-fiber is a Vue 3 renderer for three.js.
   Build your scene declaratively with re-usable, self-contained components that react to state, are readily interactive and can participate in [Vue](https://vuejs.org)'s ecosystem.
 </Intro>
 
-[![Vue Three Fiber banner](/banner.jpg)](/getting-started/examples)
+[![vue-threejs banner](/banner.jpg)](/getting-started/examples)
 
-> [!IMPORTANT] > `@vue-three/fiber` is not published to npm yet. Use the repo locally for now. See [Installation](/getting-started/installation) for the current local workflow and how to link the package into another app.
+```bash
+npm install @bluera/vue-threejs three vue
+```
 
 ## Does it have limitations?
 
@@ -30,7 +32,7 @@ Let's make a re-usable component that has its own state, reacts to user-input an
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { Canvas, useFrame } from '@vue-three/fiber'
+import { Canvas, useFrame } from '@bluera/vue-threejs'
 
 const Box = {
   props: ['position'],
@@ -71,23 +73,24 @@ const Box = {
 ```
 
 > [!NOTE]
-> Refs in Vue Three Fiber are proxy-backed — property access and `instanceof` work directly, but the ref is not the raw THREE object. For most in-scene use this is transparent. When you need the actual Three.js instance, use [`useObjectRef`](/tutorials/object-handles).
+> Refs in vue-threejs are proxy-backed — property access and `instanceof` work directly, but the ref is not the raw THREE object. For most in-scene use this is transparent. When you need the actual Three.js instance, use [`useObjectRef`](/tutorials/object-handles).
 
 <details>
   <summary>Show TypeScript example</summary>
 
 ```bash
-npm install @types/three
+# @types/three is included in the workspace devDependencies.
+# For a standalone app, install it with: npm install -D @types/three
 ```
 
 > [!NOTE]
-> The examples below still use the intended package import path, `@vue-three/fiber`. When consuming the repo locally, keep that import path and link the package from your local checkout as described in [Installation](/getting-started/installation).
+> The examples below still use the intended package import path, `@bluera/vue-threejs`. When consuming the repo locally, keep that import path and link the package from your local checkout as described in [Installation](/getting-started/installation).
 
 ```vue
 <script setup lang="ts">
 import * as THREE from 'three'
 import { ref, defineComponent, h } from 'vue'
-import { Canvas, useFrame, type ThreeElements } from '@vue-three/fiber'
+import { Canvas, useFrame, type ThreeElements } from '@bluera/vue-threejs'
 
 const Box = defineComponent({
   props: {
@@ -155,12 +158,22 @@ Some helpful material:
   <img src="/banner-journey.jpg" />
 </a>
 
-## Eco system
+## Ecosystem
 
-There is a vibrant and extensive eco system around three-fiber, full of libraries, helpers and abstractions.
+There is a vibrant and extensive ecosystem around three-fiber, full of libraries, helpers and abstractions. vue-threejs includes a [plugin system](/ecosystem/plugins) that lets ecosystem packages hook into the renderer lifecycle.
 
-- [`@vue-three/test-renderer`](/API/testing) &ndash; for unit tests in node
+### Official packages
+
+Ported from the [pmndrs](https://github.com/pmndrs) React Three Fiber ecosystem:
+
+- [`@bluera/vue-threejs-drei`](/ecosystem/drei) &ndash; controls, loaders, staging, materials, and helpers — ported from [`@react-three/drei`](https://github.com/pmndrs/drei)
+- [`@bluera/vue-threejs-postprocessing`](/ecosystem/postprocessing) &ndash; GPU postprocessing effects — ported from [`@react-three/postprocessing`](https://github.com/pmndrs/react-postprocessing)
+- [`@bluera/vue-threejs-rapier`](/ecosystem/rapier) &ndash; rigid-body physics with Rapier — ported from [`@react-three/rapier`](https://github.com/pmndrs/react-three-rapier)
+- [`@bluera/vue-threejs-test-renderer`](/API/testing) &ndash; for unit tests in node
+
+### Compatible libraries
+
 - [`pinia`](https://pinia.vuejs.org/) &ndash; Vue's official state management
-- [`zustand`](https://github.com/pmndrs/zustand) &ndash; flux based state management
+- [`zustand`](https://github.com/pmndrs/zustand) &ndash; flux-based state management
 - [`maath`](https://github.com/pmndrs/maath) &ndash; a kitchen sink for math helpers
 - [`three-stdlib`](https://github.com/pmndrs/three-stdlib) &ndash; stand-alone three.js standard library
