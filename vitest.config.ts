@@ -35,7 +35,7 @@ export default defineConfig({
     exclude: ['node_modules', '.claude', 'dist', 'e2e'],
     setupFiles: ['./packages/shared/setupTests.ts'],
     coverage: {
-      exclude: ['node_modules/', 'packages/fiber/dist', 'packages/fiber/src/index', 'packages/test-renderer/dist'],
+      exclude: ['node_modules/', 'packages/core/dist', 'packages/core/src/index', 'packages/test-renderer/dist'],
       provider: 'v8',
     },
     testTimeout: 10000,
@@ -43,8 +43,8 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: 'three', replacement: 'three' },
-      { find: /^@bluera\/vue-threejs$/, replacement: path.resolve(__dirname, 'packages/fiber/src/index.ts') },
-      { find: /^@bluera\/vue-threejs\/(.*)$/, replacement: path.resolve(__dirname, 'packages/fiber/src/$1') },
+      { find: /^@bluera\/vue-threejs$/, replacement: path.resolve(__dirname, 'packages/core/src/index.ts') },
+      { find: /^@bluera\/vue-threejs\/(.*)$/, replacement: path.resolve(__dirname, 'packages/core/src/$1') },
       {
         find: /^@bluera\/vue-threejs-test-renderer$/,
         replacement: path.resolve(__dirname, 'packages/test-renderer/src/index.tsx'),

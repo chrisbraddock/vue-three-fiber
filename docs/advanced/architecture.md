@@ -5,7 +5,7 @@ description: Internal architecture of the vue-threejs renderer.
 
 # Architecture
 
-This page describes the internal structure of vue-threejs. It is intended for contributors and advanced users who want to understand how the renderer works under the hood. All source references point to files in `packages/fiber/src/`.
+This page describes the internal structure of vue-threejs. It is intended for contributors and advanced users who want to understand how the renderer works under the hood. All source references point to files in `packages/core/src/`.
 
 ## Store
 

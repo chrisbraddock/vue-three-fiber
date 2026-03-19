@@ -48,7 +48,7 @@
     "release": "npm run build && changeset publish",
     "vers": "changeset version",
     "codegen:eslint": "npm --prefix packages/eslint-plugin run codegen",
-    "analyze-fiber": "cd packages/fiber && npm publish --dry-run --cache ../../.npm-cache",
+    "analyze-fiber": "cd packages/core && npm publish --dry-run --cache ../../.npm-cache",
     "analyze-test": "cd packages/test-renderer && npm publish --dry-run --cache ../../.npm-cache",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",

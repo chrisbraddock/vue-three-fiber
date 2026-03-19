@@ -16,8 +16,8 @@
     "noImplicitThis": false,
     "baseUrl": "./",
     "paths": {
-      "@bluera/vue-threejs": ["packages/fiber/src/index.ts"],
-      "@bluera/vue-threejs/*": ["packages/fiber/src/*"],
+      "@bluera/vue-threejs": ["packages/core/src/index.ts"],
+      "@bluera/vue-threejs/*": ["packages/core/src/*"],
       "@bluera/vue-threejs-test-renderer": ["packages/test-renderer/src/index.tsx"],
       "@bluera/vue-threejs-test-renderer/*": ["packages/test-renderer/src/*"]
     },

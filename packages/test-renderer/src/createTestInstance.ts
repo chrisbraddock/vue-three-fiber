@@ -16,7 +16,7 @@ import { expectOne, matchProps, findAll } from './helpers/testInstance'
 // Helper to create a minimal wrapper for Object3D children of primitives
 const createVirtualInstance = (object: Object3D, parent: Instance<Object3D>): Instance<Object3D> => {
   // Create the virtual instance for this object
-  // we can't import the prepare method from packages/fiber/src/core/utils.tsx so we do what we can
+  // we can't import the prepare method from packages/core/src/core/utils.tsx so we do what we can
   const instance: Instance<Object3D> = {
     root: parent.root,
     type: object.type.toLowerCase(), // Convert to lowercase to match V3F convention

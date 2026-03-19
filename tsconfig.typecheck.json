@@ -10,6 +10,6 @@
     "emitDeclarationOnly": false,
     "types": ["node", "offscreencanvas"]
   },
-  "include": ["packages/fiber/src/**/*", "packages/test-renderer/src/**/*"],
+  "include": ["packages/core/src/**/*", "packages/test-renderer/src/**/*"],
   "exclude": ["packages/**/dist/**", "packages/**/*.test.*", "packages/**/__tests__/**"]
 }
