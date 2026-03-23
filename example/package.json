@@ -7,12 +7,12 @@
   "dependencies": {
     "@bluera/vue-threejs-drei": "1.1.0",
     "@bluera/vue-threejs-postprocessing": "1.1.0",
-    "postprocessing": ">=6.30",
+    "postprocessing": ">=6.39",
     "three": "^0.183.2",
     "three-stdlib": "^2.36.1",
     "vue": "^3.5.30"
   },
   "devDependencies": {
-    "@types/three": "^0.172.0"
+    "@types/three": "^0.183.1"
   }
 }
