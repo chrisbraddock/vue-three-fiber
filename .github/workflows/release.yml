@@ -10,6 +10,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -41,41 +42,24 @@ jobs:
       - name: Test
         run: yarn dev && yarn test
 
-      - name: Check for changesets
+      - name: Create Release PR or Publish
         id: changesets
-        run: |
-          if ls .changeset/*.md 1>/dev/null 2>&1 && [ "$(ls .changeset/*.md 2>/dev/null | grep -v README.md)" ]; then
-            echo "has_changesets=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_changesets=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Version packages
-        if: steps.changesets.outputs.has_changesets == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          yarn vers
-          git push
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+          version: yarn vers
+          title: 'chore: version packages'
+          commit: 'chore: version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish to npm
-        if: steps.changesets.outputs.has_changesets == 'true'
-        id: publish
-        run: |
-          yarn release
-          CORE_VERSION=$(node -p "require('./packages/core/package.json').version")
-          echo "version=$CORE_VERSION" >> "$GITHUB_OUTPUT"
-        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Release
-        if: steps.publish.outputs.version
+        if: steps.changesets.outputs.published == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.publish.outputs.version }}
-          name: v${{ steps.publish.outputs.version }}
+          tag_name: v${{ fromJSON(steps.changesets.outputs.publishedPackages)[0].version }}
+          name: v${{ fromJSON(steps.changesets.outputs.publishedPackages)[0].version }}
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
