@@ -10,7 +10,7 @@
     "postprocessing": ">=6.30",
     "three": "^0.183.2",
     "three-stdlib": "^2.36.1",
-    "vue": "^3.5.30"
+    "vue": "^3.5.32"
   },
   "devDependencies": {
     "@types/three": "^0.183.1"
