@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { createCanvas } from '@bluera/vue-threejs-test-renderer/src/createTestCanvas'
+import { createCanvas } from '@xperimntl/vue-threejs-test-renderer/src/createTestCanvas'
 
 async function act<T>(fn: () => Promise<T>) {
   // Silence act warning since we have a custom act implementation

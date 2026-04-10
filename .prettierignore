@@ -3,7 +3,7 @@ coverage/
 node_modules/
 packages/fiber/react-reconciler/
 .yarn/
-.bluera/
+.mntl/
 docs/.vitepress/cache/
 .npm-cache/
 *.gltf

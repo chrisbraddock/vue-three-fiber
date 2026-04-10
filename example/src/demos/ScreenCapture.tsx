@@ -1,4 +1,4 @@
-import { Canvas, useThree, useRenderCommit } from '@bluera/vue-threejs'
+import { Canvas, useThree, useRenderCommit } from '@xperimntl/vue-threejs'
 import { defineComponent, ref } from 'vue'
 
 const colors = ['orange', 'hotpink', 'cyan', 'lime', 'yellow', 'red', 'blue', 'purple', 'green', 'coral']

@@ -362,7 +362,7 @@ const lineCount = computed(() => {
 // stats.js — mrdoob's standard FPS/MS/MB panel
 // Lazy-imported to avoid SSR failures (stats.js touches DOM at import time).
 // ---------------------------------------------------------------------------
-import { addEffect, addAfterEffect } from '@bluera/vue-threejs'
+import { addEffect, addAfterEffect } from '@xperimntl/vue-threejs'
 
 const stageEl = ref<HTMLElement | null>(null)
 let stats: any = null

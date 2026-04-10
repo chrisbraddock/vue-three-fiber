@@ -1,4 +1,4 @@
-import { Canvas, watchInvalidate, type RootState } from '@bluera/vue-threejs'
+import { Canvas, watchInvalidate, type RootState } from '@xperimntl/vue-threejs'
 import { defineComponent, h, ref } from 'vue'
 
 const Product = defineComponent({

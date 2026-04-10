@@ -1,4 +1,4 @@
-import { Canvas, type ThreeEvent } from '@bluera/vue-threejs'
+import { Canvas, type ThreeEvent } from '@xperimntl/vue-threejs'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({

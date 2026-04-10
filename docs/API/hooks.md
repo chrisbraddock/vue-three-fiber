@@ -12,7 +12,7 @@ You cannot expect something like this to work:
 
 ```vue
 <script setup>
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 
 // This will just crash -- not inside Canvas context
 const { size } = useThree()
@@ -30,7 +30,7 @@ Do this instead:
 ```vue
 <script setup>
 // Foo.vue -- used inside Canvas
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 
 const size = useThree((state) => state.size)
 </script>
@@ -49,7 +49,7 @@ const size = useThree((state) => state.size)
 This composable gives you access to the state model which contains the default renderer, the scene, your camera, and so on. It also gives you the current size of the canvas in screen and viewport coordinates. In Vue, `useThree` returns `ShallowRef<T>` values -- access them with `.value`.
 
 ```js
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 
 // Inside a component rendered within Canvas:
 const state = useThree()
@@ -112,7 +112,7 @@ get() // Get fresh state from anywhere you want
 ```vue
 <script setup>
 import { onMounted } from 'vue'
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 
 const set = useThree((state) => state.set)
 
@@ -127,7 +127,7 @@ onMounted(() => {
 This composable allows you to execute code on every rendered frame, like running effects, updating controls, and so on. You receive the state (same as `useThree`) and a clock delta. Your callback function will be invoked just before a frame is rendered. When the component unmounts it is unsubscribed automatically from the render-loop.
 
 ```js
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 
 // Inside a component rendered within Canvas:
 useFrame((state, delta, xrFrame) => {
@@ -180,7 +180,7 @@ This composable loads assets and suspends for easier fallback- and error-handlin
 
 ```vue
 <script setup>
-import { useLoader } from '@bluera/vue-threejs'
+import { useLoader } from '@xperimntl/vue-threejs'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 const result = useLoader(GLTFLoader, '/model.glb')
@@ -224,7 +224,7 @@ const [bumpMap, specMap, normalMap] = useLoader(TextureLoader, [url1, url2, url2
 
 ### Loading status
 
-You can get the loading status from a callback you provide as the fourth argument. Though consider alternatives like THREE.DefaultLoadingManager or better yet, [`@bluera/vue-threejs-drei`](/ecosystem/drei)'s loading helpers like `useGLTF` and `useTexture`.
+You can get the loading status from a callback you provide as the fourth argument. Though consider alternatives like THREE.DefaultLoadingManager or better yet, [`@xperimntl/vue-threejs-drei`](/ecosystem/drei)'s loading helpers like `useGLTF` and `useTexture`.
 
 ```js
 useLoader(loader, url, extensions, (xhr) => {
@@ -253,7 +253,7 @@ useLoader.preload(GLTFLoader, '/model.glb' /* extensions */)
 Convenience composable which creates a memoized, named object/material collection from any [`Object3D`](https://threejs.org/docs/#api/en/core/Object3D).
 
 ```js
-import { useLoader, useGraph } from '@bluera/vue-threejs'
+import { useLoader, useGraph } from '@xperimntl/vue-threejs'
 
 const scene = useLoader(OBJLoader, url)
 const { nodes, materials } = useGraph(scene)
@@ -271,7 +271,7 @@ Provides a typed ref callback that extracts the raw `THREE.Object3D` from the cu
 
 ```vue
 <script setup lang="ts">
-import { useObjectRef, useFrame } from '@bluera/vue-threejs'
+import { useObjectRef, useFrame } from '@xperimntl/vue-threejs'
 import type { Mesh } from 'three'
 
 const cube = useObjectRef<Mesh>()
@@ -306,7 +306,7 @@ Watches reactive Vue sources and calls `invalidate()` on the current root whenev
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { watchInvalidate } from '@bluera/vue-threejs'
+import { watchInvalidate } from '@xperimntl/vue-threejs'
 
 const color = ref('orange')
 watchInvalidate(color)
@@ -323,7 +323,7 @@ Registers a callback that runs after each rendered frame. Automatically subscrib
 
 ```vue
 <script setup>
-import { useAfterRender } from '@bluera/vue-threejs'
+import { useAfterRender } from '@xperimntl/vue-threejs'
 
 useAfterRender((timestamp) => {
   // Runs after every frame render
@@ -340,7 +340,7 @@ Returns a function that resolves after one rendered frame. Must be called during
 
 ```vue
 <script setup>
-import { useNextFrame, useThree } from '@bluera/vue-threejs'
+import { useNextFrame, useThree } from '@xperimntl/vue-threejs'
 
 const waitForFrame = useNextFrame()
 const gl = useThree((state) => state.gl)
@@ -364,7 +364,7 @@ Returns an object with a `commit()` method that waits until Vue updates have bee
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { useRenderCommit, useThree } from '@bluera/vue-threejs'
+import { useRenderCommit, useThree } from '@xperimntl/vue-threejs'
 
 const { commit } = useRenderCommit()
 const gl = useThree((state) => state.gl)

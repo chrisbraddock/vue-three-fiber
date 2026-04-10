@@ -13,7 +13,7 @@ Let's take a small Vue example:
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 </script>
 
 <template>

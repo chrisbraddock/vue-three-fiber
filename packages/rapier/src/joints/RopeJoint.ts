@@ -29,7 +29,7 @@ export const RopeJoint = defineComponent({
   setup(props) {
     const physics = inject(PHYSICS_CONTEXT)
     if (!physics) {
-      throw new Error('@bluera/vue-threejs-rapier: <RopeJoint> must be placed inside a <Physics> component')
+      throw new Error('@xperimntl/vue-threejs-rapier: <RopeJoint> must be placed inside a <Physics> component')
     }
 
     const { world, rapier } = physics

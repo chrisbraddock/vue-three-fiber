@@ -8,7 +8,7 @@ import { RIGID_BODY_CONTEXT, type RigidBodyContext } from '../context'
 export function useRigidBody(): RigidBodyContext {
   const context = inject(RIGID_BODY_CONTEXT)
   if (!context) {
-    throw new Error('@bluera/vue-threejs-rapier: useRigidBody() must be called inside a <RigidBody> component')
+    throw new Error('@xperimntl/vue-threejs-rapier: useRigidBody() must be called inside a <RigidBody> component')
   }
   return context
 }

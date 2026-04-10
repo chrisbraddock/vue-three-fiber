@@ -82,7 +82,7 @@ Three.js constructors are stored in a module-level `catalogue` object keyed by P
 
 ```ts
 import * as THREE from 'three'
-import { extend } from '@bluera/vue-threejs'
+import { extend } from '@xperimntl/vue-threejs'
 
 extend(THREE) // registers Mesh, BoxGeometry, MeshStandardMaterial, ...
 ```

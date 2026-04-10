@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@bluera/vue-threejs'
+import { Canvas, useFrame } from '@xperimntl/vue-threejs'
 import { defineComponent, ref } from 'vue'
 import { BoxGeometry, Group, Mesh, MeshBasicMaterial } from 'three'
 

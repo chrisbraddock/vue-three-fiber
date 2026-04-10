@@ -1,5 +1,5 @@
 import { Scene } from 'three'
-import type { Instance } from '@bluera/vue-threejs'
+import type { Instance } from '@xperimntl/vue-threejs'
 import type { TreeNode, Tree } from '../types/public'
 import { lowerCaseFirstLetter } from './strings'
 

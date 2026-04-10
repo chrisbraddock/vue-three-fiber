@@ -2,7 +2,7 @@ import type { VNode } from 'vue'
 import { Scene } from 'three'
 import * as THREE from 'three'
 
-import { extend, _roots, createRoot, act, events as createPointerEvents, type Instance } from '@bluera/vue-threejs'
+import { extend, _roots, createRoot, act, events as createPointerEvents, type Instance } from '@xperimntl/vue-threejs'
 
 const mockRoots = _roots
 

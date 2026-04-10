@@ -1,4 +1,4 @@
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import { computed, defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { DoubleSide, Mesh, MeshBasicMaterial, SphereGeometry } from 'three'
 

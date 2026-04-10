@@ -1,16 +1,16 @@
 {
-  "name": "vue-three-fiber-workspace",
+  "name": "vue-threejs-workspace",
   "version": "1.0.0",
-  "description": "Workspace for vue-three-fiber",
+  "description": "Workspace for vue-threejs",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/blueraai/vue-threejs#readme",
+  "homepage": "https://github.com/chris-xperimntl/vue-threejs#readme",
   "bugs": {
-    "url": "https://github.com/blueraai/vue-threejs/issues"
+    "url": "https://github.com/chris-xperimntl/vue-threejs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueraai/vue-threejs.git"
+    "url": "git+https://github.com/chris-xperimntl/vue-threejs.git"
   },
   "workspaces": [
     "packages/*",

@@ -11,7 +11,7 @@ Use `frameloop="demand"` when your scene can become idle. Instead of rendering e
 
 ```ts
 import { h } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 
 export default () => h(Canvas, { frameloop: 'demand' })
 ```
@@ -24,7 +24,7 @@ Imperative mutations are invisible to Vue's change detection. If controls or ext
 
 ```ts
 import { onMounted, ref } from 'vue'
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 
 const controlsRef = ref<any>(null)
 const invalidate = useThree((state) => state.invalidate)
@@ -54,7 +54,7 @@ When resources are created outside the canvas lifecycle, make sure your color-ma
 `useLoader` caches by input URL. Re-use cached assets instead of reloading and reconstructing them in multiple components.
 
 ```ts
-import { useLoader } from '@bluera/vue-threejs'
+import { useLoader } from '@xperimntl/vue-threejs'
 import { TextureLoader } from 'three'
 
 const colorMap = useLoader(TextureLoader, '/albedo.png')

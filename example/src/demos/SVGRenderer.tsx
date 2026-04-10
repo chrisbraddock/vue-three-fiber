@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@bluera/vue-threejs'
+import { Canvas, useFrame } from '@xperimntl/vue-threejs'
 import { defineComponent, h, onBeforeUnmount, onMounted, ref, shallowRef } from 'vue'
 import { Color, Mesh } from 'three'
 import { SVGRenderer } from 'three-stdlib'

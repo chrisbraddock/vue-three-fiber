@@ -12,7 +12,7 @@ The simplest approach is a reactive ref that controls which scene component is r
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import SceneA from './SceneA.vue'
 import SceneB from './SceneB.vue'
 
@@ -113,7 +113,7 @@ Connect your loading state to a DOM overlay to display progress information abov
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import HeavyScene from './HeavyScene.vue'
 
 const progress = ref(0)
@@ -168,9 +168,9 @@ Vue's `<Suspense>` works with `useLoader` and async `setup()` to defer rendering
 
 For details on Vue's renderer-specific Suspense behavior in a Three.js context, see [Vue Divergences](/advanced/vue-divergences).
 
-## Future: @bluera/vue-threejs-extras
+## Future: @xperimntl/vue-threejs-extras
 
-Higher-level components like `SceneTransition` and `ResourceBoundary` are planned for the `@bluera/vue-threejs-extras` package. These will formalize the patterns shown in this tutorial into reusable components with explicit transition strategy props (`keep-previous`, `replace`, `crossfade`), built-in progress tracking, and optional enter/leave animations for scene content.
+Higher-level components like `SceneTransition` and `ResourceBoundary` are planned for the `@xperimntl/vue-threejs-extras` package. These will formalize the patterns shown in this tutorial into reusable components with explicit transition strategy props (`keep-previous`, `replace`, `crossfade`), built-in progress tracking, and optional enter/leave animations for scene content.
 
 ## Next steps
 

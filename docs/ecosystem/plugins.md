@@ -8,14 +8,14 @@ description: Extend vue-threejs with a composable, dependency-aware plugin syste
 vue-threejs includes a root-scoped plugin system that lets packages hook into the renderer lifecycle, provide values to the component tree, and register Three.js extensions — all without tight coupling to Canvas internals.
 
 > [!TIP]
-> The plugin system is the recommended way to integrate ecosystem packages like [`@bluera/vue-threejs-drei`](/ecosystem/drei), [`@bluera/vue-threejs-postprocessing`](/ecosystem/postprocessing), and [`@bluera/vue-threejs-rapier`](/ecosystem/rapier).
+> The plugin system is the recommended way to integrate ecosystem packages like [`@xperimntl/vue-threejs-drei`](/ecosystem/drei), [`@xperimntl/vue-threejs-postprocessing`](/ecosystem/postprocessing), and [`@xperimntl/vue-threejs-rapier`](/ecosystem/rapier).
 
 ## Defining a plugin
 
 Use `defineFiberPlugin` to create a type-safe plugin definition:
 
 ```ts
-import { defineFiberPlugin } from '@bluera/vue-threejs'
+import { defineFiberPlugin } from '@xperimntl/vue-threejs'
 
 export const myPlugin = defineFiberPlugin({
   name: 'my-plugin',
@@ -52,7 +52,7 @@ The `setup` function receives a `FiberPluginContext` with:
 Plugins can accept typed options:
 
 ```ts
-import { defineFiberPlugin, withPluginOptions } from '@bluera/vue-threejs'
+import { defineFiberPlugin, withPluginOptions } from '@xperimntl/vue-threejs'
 
 export interface MyPluginOptions {
   debug?: boolean
@@ -80,7 +80,7 @@ Declare dependencies with `requires` for guaranteed initialization order:
 ```ts
 export const effectsPlugin = defineFiberPlugin({
   name: 'my-effects',
-  requires: ['@bluera/vue-threejs-postprocessing'],
+  requires: ['@xperimntl/vue-threejs-postprocessing'],
   setup(ctx) {
     // postprocessing plugin is guaranteed to have run first
   },
@@ -97,9 +97,9 @@ Pass plugins directly to a `Canvas`:
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
-import { createDreiPlugin } from '@bluera/vue-threejs-drei'
-import { createPostprocessingPlugin } from '@bluera/vue-threejs-postprocessing'
+import { Canvas } from '@xperimntl/vue-threejs'
+import { createDreiPlugin } from '@xperimntl/vue-threejs-drei'
+import { createPostprocessingPlugin } from '@xperimntl/vue-threejs-postprocessing'
 
 const plugins = [createDreiPlugin({ dracoPath: '/draco/' }), createPostprocessingPlugin({ multisampling: 4 })]
 </script>
@@ -117,8 +117,8 @@ Register plugins once for every Canvas in the app:
 
 ```ts
 import { createApp } from 'vue'
-import { registerFiberPlugin } from '@bluera/vue-threejs'
-import { dreiFiberPlugin } from '@bluera/vue-threejs-drei'
+import { registerFiberPlugin } from '@xperimntl/vue-threejs'
+import { dreiFiberPlugin } from '@xperimntl/vue-threejs-drei'
 
 const app = createApp(App)
 registerFiberPlugin(app, dreiFiberPlugin)
@@ -162,6 +162,6 @@ By default, Canvas inherits app-level plugins. Disable with:
 
 ## Official plugins
 
-- [`@bluera/vue-threejs-drei`](/ecosystem/drei) — controls, loaders, staging, helpers
-- [`@bluera/vue-threejs-postprocessing`](/ecosystem/postprocessing) — GPU postprocessing effects
-- [`@bluera/vue-threejs-rapier`](/ecosystem/rapier) — physics simulation
+- [`@xperimntl/vue-threejs-drei`](/ecosystem/drei) — controls, loaders, staging, helpers
+- [`@xperimntl/vue-threejs-postprocessing`](/ecosystem/postprocessing) — GPU postprocessing effects
+- [`@xperimntl/vue-threejs-rapier`](/ecosystem/rapier) — physics simulation

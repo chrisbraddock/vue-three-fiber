@@ -37,15 +37,8 @@ playwright-report/
 blob-report/
 e2e/.auth/
 
-# Bluera plugins - shared config committed, local/state ignored
-.bluera/
-!.bluera/bluera-base/
-!.bluera/bluera-knowledge/
-.bluera/bluera-base/*
-.bluera/bluera-knowledge/*
-!.bluera/bluera-base/config.json
-!.bluera/bluera-base/TODO.txt
-!.bluera/bluera-knowledge/stores.config.json
+# MNTL plugins - shared config committed, local/state ignored
+.mntl/
 # Claude Code local files (not committed)
 *.local.md
 *.png
@@ -60,3 +53,25 @@ RC1-REPORT-*.md
 VUE_NATIVE_EVOLUTION_PLAN.md
 vue-three-fiber-plugin-system-spec.md
 vue-three-fiber-vue-first-plan.md
+
+# MNTL plugins - shared config committed, local/state ignored
+.mntl/
+!.mntl/mntl-base/
+!.mntl/mntl-knowledge/
+.mntl/mntl-base/*
+.mntl/mntl-knowledge/*
+!.mntl/mntl-base/config.json
+!.mntl/mntl-base/TODO.txt
+!.mntl/mntl-knowledge/stores.config.json
+# Claude Code local files (not committed)
+*.local.md
+
+# MNTL plugins - shared config committed, local/state ignored
+.mntl/
+!.mntl/mntl-base/
+!.mntl/mntl-knowledge/
+.mntl/mntl-base/*
+.mntl/mntl-knowledge/*
+!.mntl/mntl-base/config.json
+!.mntl/mntl-base/TODO.txt
+!.mntl/mntl-knowledge/stores.config.json

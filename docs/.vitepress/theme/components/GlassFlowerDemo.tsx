@@ -1,5 +1,5 @@
-import { Canvas, useFrame, useLoader, useObjectRef } from '@bluera/vue-threejs'
-import { Environment, OrbitControls } from '@bluera/vue-threejs-drei'
+import { Canvas, useFrame, useLoader, useObjectRef } from '@xperimntl/vue-threejs'
+import { Environment, OrbitControls } from '@xperimntl/vue-threejs-drei'
 import { defineComponent, h } from 'vue'
 import * as THREE from 'three'
 import type { Mesh, Object3D } from 'three'

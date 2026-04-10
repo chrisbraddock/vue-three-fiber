@@ -6,11 +6,11 @@ description: How to install and use vue-threejs
 ## Install from npm
 
 ```bash
-npm install @bluera/vue-threejs three vue
+npm install @xperimntl/vue-threejs three vue
 ```
 
 ```ts
-import { Canvas, useFrame } from '@bluera/vue-threejs'
+import { Canvas, useFrame } from '@xperimntl/vue-threejs'
 ```
 
 Requires `vue >= 3.3` and `three >= 0.156`.
@@ -20,7 +20,7 @@ Requires `vue >= 3.3` and `three >= 0.156`.
 ```bash
 npm create vite my-app
 cd my-app
-npm install @bluera/vue-threejs three
+npm install @xperimntl/vue-threejs three
 npm run dev
 ```
 
@@ -81,7 +81,7 @@ Wrap `<Canvas>` in `<ClientOnly>` for SSR.
 
 <script type="module">
   import { createApp, ref, h } from 'https://esm.sh/vue'
-  import { createRoot, extend } from 'https://esm.sh/@bluera/vue-threejs'
+  import { createRoot, extend } from 'https://esm.sh/@xperimntl/vue-threejs'
   import * as THREE from 'https://esm.sh/three'
 
   extend(THREE)
@@ -105,7 +105,7 @@ Wrap `<Canvas>` in `<ClientOnly>` for SSR.
 To work on the renderer itself:
 
 ```bash
-git clone https://github.com/blueraai/vue-threejs.git
+git clone https://github.com/chris-xperimntl/vue-threejs.git
 cd vue-threejs
 yarn install
 yarn build

@@ -10,7 +10,7 @@ import { PHYSICS_CONTEXT } from '../context'
 export function useAfterPhysicsStep(callback: (world: RAPIER.World) => void): void {
   const physics = inject(PHYSICS_CONTEXT)
   if (!physics) {
-    throw new Error('@bluera/vue-threejs-rapier: useAfterPhysicsStep() must be called inside a <Physics> component')
+    throw new Error('@xperimntl/vue-threejs-rapier: useAfterPhysicsStep() must be called inside a <Physics> component')
   }
 
   const unsub = physics.onAfterStep(callback)

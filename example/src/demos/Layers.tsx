@@ -1,4 +1,4 @@
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { Layers } from 'three'
 

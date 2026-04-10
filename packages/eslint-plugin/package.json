@@ -1,7 +1,7 @@
 {
-  "name": "@bluera/eslint-plugin-vue-threejs",
-  "version": "1.1.1",
-  "description": "ESLint rules for @bluera/vue-threejs.",
+  "name": "@xperimntl/eslint-plugin-vue-threejs",
+  "version": "1.0.0",
+  "description": "ESLint rules for @xperimntl/vue-threejs.",
   "keywords": [
     "vue",
     "renderer",
@@ -12,16 +12,16 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blueraai/vue-threejs/issues"
+    "url": "https://github.com/chris-xperimntl/vue-threejs/issues"
   },
-  "homepage": "https://github.com/blueraai/vue-threejs/tree/master/packages/eslint-plugin#readme",
+  "homepage": "https://github.com/chris-xperimntl/vue-threejs/tree/master/packages/eslint-plugin#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueraai/vue-threejs.git"
+    "url": "git+https://github.com/chris-xperimntl/vue-threejs.git"
   },
-  "main": "dist/bluera-eslint-plugin-vue-threejs.cjs.js",
-  "module": "dist/bluera-eslint-plugin-vue-threejs.esm.js",
-  "types": "dist/bluera-eslint-plugin-vue-threejs.cjs.d.ts",
+  "main": "dist/xperimntl-eslint-plugin-vue-threejs.cjs.js",
+  "module": "dist/xperimntl-eslint-plugin-vue-threejs.esm.js",
+  "types": "dist/xperimntl-eslint-plugin-vue-threejs.cjs.d.ts",
   "files": [
     "dist"
   ],

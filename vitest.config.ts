@@ -43,14 +43,14 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: 'three', replacement: 'three' },
-      { find: /^@bluera\/vue-threejs$/, replacement: path.resolve(__dirname, 'packages/core/src/index.ts') },
-      { find: /^@bluera\/vue-threejs\/(.*)$/, replacement: path.resolve(__dirname, 'packages/core/src/$1') },
+      { find: /^@xperimntl\/vue-threejs$/, replacement: path.resolve(__dirname, 'packages/core/src/index.ts') },
+      { find: /^@xperimntl\/vue-threejs\/(.*)$/, replacement: path.resolve(__dirname, 'packages/core/src/$1') },
       {
-        find: /^@bluera\/vue-threejs-test-renderer$/,
+        find: /^@xperimntl\/vue-threejs-test-renderer$/,
         replacement: path.resolve(__dirname, 'packages/test-renderer/src/index.tsx'),
       },
       {
-        find: /^@bluera\/vue-threejs-test-renderer\/(.*)$/,
+        find: /^@xperimntl\/vue-threejs-test-renderer\/(.*)$/,
         replacement: path.resolve(__dirname, 'packages/test-renderer/$1'),
       },
     ],

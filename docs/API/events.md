@@ -100,7 +100,7 @@ onPointerUp={(e) => {
 For some advanced usage it's possible to customize the setting of the event manager globally with the `events` prop on `<Canvas/>`:
 
 ```ts
-import { Canvas, events } from '@bluera/vue-threejs'
+import { Canvas, events } from '@xperimntl/vue-threejs'
 
 const eventManagerFactory = (state) => ({
   // Default configuration

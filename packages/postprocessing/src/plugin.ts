@@ -1,4 +1,4 @@
-import { defineFiberPlugin, withPluginOptions } from '@bluera/vue-threejs'
+import { defineFiberPlugin, withPluginOptions } from '@xperimntl/vue-threejs'
 import { POSTPROCESSING_DEFAULTS, type PostprocessingDefaults } from './context'
 
 export interface PostprocessingPluginOptions {
@@ -8,7 +8,7 @@ export interface PostprocessingPluginOptions {
 }
 
 export const postprocessingFiberPlugin = defineFiberPlugin<PostprocessingPluginOptions | void>({
-  name: '@bluera/vue-threejs-postprocessing',
+  name: '@xperimntl/vue-threejs-postprocessing',
   setup(ctx, options) {
     if (options) {
       ctx.provide(POSTPROCESSING_DEFAULTS, options satisfies PostprocessingDefaults)

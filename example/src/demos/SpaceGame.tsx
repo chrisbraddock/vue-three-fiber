@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useLoader, useObjectRef, useThree } from '@bluera/vue-threejs'
+import { Canvas, useFrame, useLoader, useObjectRef, useThree } from '@xperimntl/vue-threejs'
 import {
   computed,
   defineComponent,

@@ -30,7 +30,7 @@ export interface FiberPluginContext {
 // ---------------------------------------------------------------------------
 
 export interface FiberPluginDefinition<TOptions = void> {
-  /** Globally unique name, e.g. '@bluera/vue-threejs-drei' */
+  /** Globally unique name, e.g. '@xperimntl/vue-threejs-drei' */
   name: string
   /** Names of plugins that must be set up before this one */
   requires?: readonly string[]

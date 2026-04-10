@@ -43,12 +43,16 @@ export const HeightfieldCollider = defineComponent({
   setup(props) {
     const physics = inject(PHYSICS_CONTEXT)
     if (!physics) {
-      throw new Error('@bluera/vue-threejs-rapier: <HeightfieldCollider> must be placed inside a <Physics> component')
+      throw new Error(
+        '@xperimntl/vue-threejs-rapier: <HeightfieldCollider> must be placed inside a <Physics> component',
+      )
     }
 
     const rigidBody = inject(RIGID_BODY_CONTEXT)
     if (!rigidBody) {
-      throw new Error('@bluera/vue-threejs-rapier: <HeightfieldCollider> must be placed inside a <RigidBody> component')
+      throw new Error(
+        '@xperimntl/vue-threejs-rapier: <HeightfieldCollider> must be placed inside a <RigidBody> component',
+      )
     }
 
     const { rapier } = physics

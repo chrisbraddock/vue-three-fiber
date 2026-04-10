@@ -22,12 +22,12 @@ export interface UseColliderReturn {
 export function useCollider(): UseColliderReturn {
   const physics = inject(PHYSICS_CONTEXT)
   if (!physics) {
-    throw new Error('@bluera/vue-threejs-rapier: useCollider() must be called inside a <Physics> component')
+    throw new Error('@xperimntl/vue-threejs-rapier: useCollider() must be called inside a <Physics> component')
   }
 
   const rigidBody = inject(RIGID_BODY_CONTEXT)
   if (!rigidBody) {
-    throw new Error('@bluera/vue-threejs-rapier: useCollider() must be called inside a <RigidBody> component')
+    throw new Error('@xperimntl/vue-threejs-rapier: useCollider() must be called inside a <RigidBody> component')
   }
 
   const colliders: ShallowRef<RAPIER.Collider[]> = shallowRef([])

@@ -3,7 +3,7 @@ title: Postprocessing
 description: Vue-native GPU postprocessing effects for vue-threejs.
 ---
 
-# @bluera/vue-threejs-postprocessing
+# @xperimntl/vue-threejs-postprocessing
 
 Declarative postprocessing for vue-threejs, built on the [`postprocessing`](https://github.com/pmndrs/postprocessing) library.
 
@@ -11,22 +11,22 @@ Declarative postprocessing for vue-threejs, built on the [`postprocessing`](http
 
 ## Availability
 
-`@bluera/vue-threejs-postprocessing` is included in the monorepo. Install the core package to use it:
+`@xperimntl/vue-threejs-postprocessing` is included in the monorepo. Install the core package to use it:
 
 ## Plugin registration
 
 Register as a [fiber plugin](/ecosystem/plugins) to set global defaults:
 
 ```ts
-import { createPostprocessingPlugin } from '@bluera/vue-threejs-postprocessing'
+import { createPostprocessingPlugin } from '@xperimntl/vue-threejs-postprocessing'
 
 <Canvas :plugins="[createPostprocessingPlugin({ multisampling: 4 })]">
 ```
 
 ```ts
 // Or app-wide
-import { registerFiberPlugin } from '@bluera/vue-threejs'
-import { postprocessingFiberPlugin } from '@bluera/vue-threejs-postprocessing'
+import { registerFiberPlugin } from '@xperimntl/vue-threejs'
+import { postprocessingFiberPlugin } from '@xperimntl/vue-threejs-postprocessing'
 
 registerFiberPlugin(app, postprocessingFiberPlugin)
 ```
@@ -45,8 +45,8 @@ Wrap your scene with `EffectComposer` and add effect components as children:
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
-import { EffectComposer, Bloom, Noise, Vignette } from '@bluera/vue-threejs-postprocessing'
+import { Canvas } from '@xperimntl/vue-threejs'
+import { EffectComposer, Bloom, Noise, Vignette } from '@xperimntl/vue-threejs-postprocessing'
 </script>
 
 <template>
@@ -136,7 +136,7 @@ Color grading with a lookup table.
 
 ```vue
 <script setup>
-import { useLoader } from '@bluera/vue-threejs'
+import { useLoader } from '@xperimntl/vue-threejs'
 import { LUTCubeLoader } from 'three/examples/jsm/loaders/LUTCubeLoader.js'
 
 const lut = useLoader(LUTCubeLoader, '/my-lut.cube')

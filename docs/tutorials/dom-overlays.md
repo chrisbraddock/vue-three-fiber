@@ -37,7 +37,7 @@ Use Vue's standard reactivity to connect overlay controls to your 3D scene. Sinc
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 
 const color = ref('orange')
 const scale = ref(1)
@@ -76,7 +76,7 @@ For larger applications, use Vue's `provide`/`inject` to share scene state betwe
 <!-- App.vue -->
 <script setup lang="ts">
 import { ref, provide } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import SceneContent from './SceneContent.vue'
 
 // Shared state that both 3D components and overlay can access

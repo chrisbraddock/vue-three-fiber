@@ -38,7 +38,7 @@ Vue's behavior avoids jarring visual disappearances during loading transitions. 
 
 ### What to do
 
-Use Vue's `<Suspense>` as documented. If you need explicit control over what happens during loading transitions — showing placeholders, fading between scenes, or removing old content — higher-level scene transition components (`SceneTransition`, `ResourceBoundary`) are planned for a `@bluera/vue-threejs-extras` package. These will provide explicit transition strategies (`keep-previous`, `replace`, `manual`) as component props rather than hidden renderer behavior.
+Use Vue's `<Suspense>` as documented. If you need explicit control over what happens during loading transitions — showing placeholders, fading between scenes, or removing old content — higher-level scene transition components (`SceneTransition`, `ResourceBoundary`) are planned for a `@xperimntl/vue-threejs-extras` package. These will provide explicit transition strategies (`keep-previous`, `replace`, `manual`) as component props rather than hidden renderer behavior.
 
 In the meantime, you can build similar patterns using Vue's built-in tools:
 
@@ -51,7 +51,7 @@ In the meantime, you can build similar patterns using Vue's built-in tools:
 `flushSync` synchronously flushes pending reactive updates to the Three.js scene graph. After `flushSync(fn)` returns, the scene reflects the state changes made inside `fn`.
 
 ```ts
-import { flushSync } from '@bluera/vue-threejs'
+import { flushSync } from '@xperimntl/vue-threejs'
 
 flushSync(() => {
   positionX.value = 42

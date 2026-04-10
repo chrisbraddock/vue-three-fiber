@@ -15,7 +15,7 @@ In vue-threejs's custom renderer, template refs receive an internal Instance pro
 
 ```vue
 <script setup lang="ts">
-import { useObjectRef, useFrame } from '@bluera/vue-threejs'
+import { useObjectRef, useFrame } from '@xperimntl/vue-threejs'
 import type { Mesh } from 'three'
 
 const cube = useObjectRef<Mesh>()
@@ -50,7 +50,7 @@ A common need is handing the Three.js object to a physics library, animation sys
 ```vue
 <script setup lang="ts">
 import { watch } from 'vue'
-import { useObjectRef } from '@bluera/vue-threejs'
+import { useObjectRef } from '@xperimntl/vue-threejs'
 import type { Mesh } from 'three'
 
 const target = useObjectRef<Mesh>()
@@ -79,7 +79,7 @@ When a component's `args` or `object` prop changes, vue-threejs destroys the old
 ```vue
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { useObjectRef } from '@bluera/vue-threejs'
+import { useObjectRef } from '@xperimntl/vue-threejs'
 import type { Mesh } from 'three'
 
 const cube = useObjectRef<Mesh>()
@@ -110,7 +110,7 @@ The `mounted` property tells you whether the object is currently in the scene. T
 ```vue
 <script setup lang="ts">
 import { watch } from 'vue'
-import { useObjectRef } from '@bluera/vue-threejs'
+import { useObjectRef } from '@xperimntl/vue-threejs'
 import type { PointLight } from 'three'
 
 const light = useObjectRef<PointLight>()

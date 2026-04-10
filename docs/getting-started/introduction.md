@@ -10,7 +10,7 @@ description: Vue-three-fiber is a Vue 3 renderer for three.js.
 [![vue-threejs banner](/banner.jpg)](/getting-started/examples)
 
 ```bash
-npm install @bluera/vue-threejs three vue
+npm install @xperimntl/vue-threejs three vue
 ```
 
 ## Does it have limitations?
@@ -32,7 +32,7 @@ Let's make a re-usable component that has its own state, reacts to user-input an
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { Canvas, useFrame } from '@bluera/vue-threejs'
+import { Canvas, useFrame } from '@xperimntl/vue-threejs'
 
 const Box = {
   props: ['position'],
@@ -84,13 +84,13 @@ const Box = {
 ```
 
 > [!NOTE]
-> The examples below still use the intended package import path, `@bluera/vue-threejs`. When consuming the repo locally, keep that import path and link the package from your local checkout as described in [Installation](/getting-started/installation).
+> The examples below still use the intended package import path, `@xperimntl/vue-threejs`. When consuming the repo locally, keep that import path and link the package from your local checkout as described in [Installation](/getting-started/installation).
 
 ```vue
 <script setup lang="ts">
 import * as THREE from 'three'
 import { ref, defineComponent, h } from 'vue'
-import { Canvas, useFrame, type ThreeElements } from '@bluera/vue-threejs'
+import { Canvas, useFrame, type ThreeElements } from '@xperimntl/vue-threejs'
 
 const Box = defineComponent({
   props: {
@@ -166,10 +166,10 @@ There is a vibrant and extensive ecosystem around three-fiber, full of libraries
 
 Ported from the [pmndrs](https://github.com/pmndrs) React Three Fiber ecosystem:
 
-- [`@bluera/vue-threejs-drei`](/ecosystem/drei) &ndash; controls, loaders, staging, materials, and helpers — ported from [`@react-three/drei`](https://github.com/pmndrs/drei)
-- [`@bluera/vue-threejs-postprocessing`](/ecosystem/postprocessing) &ndash; GPU postprocessing effects — ported from [`@react-three/postprocessing`](https://github.com/pmndrs/react-postprocessing)
-- [`@bluera/vue-threejs-rapier`](/ecosystem/rapier) &ndash; rigid-body physics with Rapier — ported from [`@react-three/rapier`](https://github.com/pmndrs/react-three-rapier)
-- [`@bluera/vue-threejs-test-renderer`](/API/testing) &ndash; for unit tests in node
+- [`@xperimntl/vue-threejs-drei`](/ecosystem/drei) &ndash; controls, loaders, staging, materials, and helpers — ported from [`@react-three/drei`](https://github.com/pmndrs/drei)
+- [`@xperimntl/vue-threejs-postprocessing`](/ecosystem/postprocessing) &ndash; GPU postprocessing effects — ported from [`@react-three/postprocessing`](https://github.com/pmndrs/react-postprocessing)
+- [`@xperimntl/vue-threejs-rapier`](/ecosystem/rapier) &ndash; rigid-body physics with Rapier — ported from [`@react-three/rapier`](https://github.com/pmndrs/react-three-rapier)
+- [`@xperimntl/vue-threejs-test-renderer`](/API/testing) &ndash; for unit tests in node
 
 ### Compatible libraries
 

@@ -1,6 +1,6 @@
 import * as THREE from 'three'
-import { WebGL2RenderingContext } from '@bluera/vue-threejs-test-renderer/src/WebGL2RenderingContext'
-import { extend } from '@bluera/vue-threejs'
+import { WebGL2RenderingContext } from '@xperimntl/vue-threejs-test-renderer/src/WebGL2RenderingContext'
+import { extend } from '@xperimntl/vue-threejs'
 
 const DEFAULT_RECT = { width: 1280, height: 800, top: 0, left: 0, right: 1280, bottom: 800, x: 0, y: 0 }
 const originalGetBoundingClientRect = HTMLElement.prototype.getBoundingClientRect

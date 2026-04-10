@@ -1,5 +1,5 @@
 import { defineComponent, inject, watchEffect } from 'vue'
-import { useFrame, useObjectRef, watchInvalidate } from '@bluera/vue-threejs'
+import { useFrame, useObjectRef, watchInvalidate } from '@xperimntl/vue-threejs'
 import { composerKey, type ComposerService } from './ComposerService'
 import type { Mesh, MeshStandardMaterial } from 'three'
 

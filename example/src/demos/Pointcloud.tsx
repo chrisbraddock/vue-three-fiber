@@ -1,4 +1,4 @@
-import { Canvas, type ThreeEvent, extend } from '@bluera/vue-threejs'
+import { Canvas, type ThreeEvent, extend } from '@xperimntl/vue-threejs'
 import { computed, defineComponent, ref } from 'vue'
 import { Color, Points, ShaderLib, ShaderMaterial } from 'three'
 

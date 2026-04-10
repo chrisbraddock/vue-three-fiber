@@ -1,5 +1,5 @@
 import { defineComponent, onBeforeUnmount, shallowRef, watch, h, type PropType } from 'vue'
-import { useThree, useFrame } from '@bluera/vue-threejs'
+import { useThree, useFrame } from '@xperimntl/vue-threejs'
 import * as THREE from 'three'
 
 export const MeshTransmissionMaterial = defineComponent({

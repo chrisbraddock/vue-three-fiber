@@ -192,7 +192,7 @@ const mesh = new THREE.Mesh(geometry, material)
 The `extend` function extends vue-threejs's catalogue of elements. Components added this way can then be referenced in the scene-graph using camel casing similar to other primitives.
 
 ```js
-import { extend } from '@bluera/vue-threejs'
+import { extend } from '@xperimntl/vue-threejs'
 import { OrbitControls, TransformControls } from 'three-stdlib'
 extend({ OrbitControls, TransformControls })
 ```

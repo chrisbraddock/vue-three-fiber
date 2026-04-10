@@ -49,4 +49,4 @@ git push
 2. Merge that PR when ready
 3. CI publishes to npm and creates a GitHub Release automatically
 
-Only `@bluera/vue-threejs` is published to npm. All other packages (drei, postprocessing, rapier, etc.) are internal.
+Only `@xperimntl/vue-threejs` is published to npm. All other packages (drei, postprocessing, rapier, etc.) are internal.

@@ -3,7 +3,7 @@ title: Rapier Physics
 description: Vue-native physics simulation for vue-threejs using Rapier.
 ---
 
-# @bluera/vue-threejs-rapier
+# @xperimntl/vue-threejs-rapier
 
 Declarative rigid-body physics for vue-threejs, powered by [Rapier](https://rapier.rs/).
 
@@ -11,22 +11,22 @@ Declarative rigid-body physics for vue-threejs, powered by [Rapier](https://rapi
 
 ## Availability
 
-`@bluera/vue-threejs-rapier` is included in the monorepo. Install the core package to use it:
+`@xperimntl/vue-threejs-rapier` is included in the monorepo. Install the core package to use it:
 
 ## Plugin registration
 
 Register as a [fiber plugin](/ecosystem/plugins) to set global defaults:
 
 ```ts
-import { createRapierPlugin } from '@bluera/vue-threejs-rapier'
+import { createRapierPlugin } from '@xperimntl/vue-threejs-rapier'
 
 <Canvas :plugins="[createRapierPlugin({ gravity: [0, -9.81, 0] })]">
 ```
 
 ```ts
 // Or app-wide
-import { registerFiberPlugin } from '@bluera/vue-threejs'
-import { rapierFiberPlugin } from '@bluera/vue-threejs-rapier'
+import { registerFiberPlugin } from '@xperimntl/vue-threejs'
+import { rapierFiberPlugin } from '@xperimntl/vue-threejs-rapier'
 
 registerFiberPlugin(app, rapierFiberPlugin)
 ```
@@ -37,8 +37,8 @@ Wrap physics objects in a `Physics` world and add `RigidBody` components:
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
-import { Physics, RigidBody, CuboidCollider } from '@bluera/vue-threejs-rapier'
+import { Canvas } from '@xperimntl/vue-threejs'
+import { Physics, RigidBody, CuboidCollider } from '@xperimntl/vue-threejs-rapier'
 </script>
 
 <template>
@@ -160,7 +160,7 @@ Connect two rigid bodies with a constraint.
 Access the Rapier world and API from any descendant of `Physics`.
 
 ```ts
-import { useRapier } from '@bluera/vue-threejs-rapier'
+import { useRapier } from '@xperimntl/vue-threejs-rapier'
 
 const { world, rapier } = useRapier()
 ```
@@ -170,7 +170,7 @@ const { world, rapier } = useRapier()
 Access the rigid body API from within a `RigidBody`.
 
 ```ts
-import { useRigidBody } from '@bluera/vue-threejs-rapier'
+import { useRigidBody } from '@xperimntl/vue-threejs-rapier'
 
 const { rigidBody, api } = useRigidBody()
 // api.applyImpulse([0, 5, 0])
@@ -181,7 +181,7 @@ const { rigidBody, api } = useRigidBody()
 Access collider data from within a collider component.
 
 ```ts
-import { useCollider } from '@bluera/vue-threejs-rapier'
+import { useCollider } from '@xperimntl/vue-threejs-rapier'
 
 const { collider } = useCollider()
 ```
@@ -191,7 +191,7 @@ const { collider } = useCollider()
 Run logic before or after each physics step.
 
 ```ts
-import { useBeforePhysicsStep, useAfterPhysicsStep } from '@bluera/vue-threejs-rapier'
+import { useBeforePhysicsStep, useAfterPhysicsStep } from '@xperimntl/vue-threejs-rapier'
 
 useBeforePhysicsStep((world) => {
   // apply forces, read positions, etc.

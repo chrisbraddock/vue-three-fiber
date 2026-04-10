@@ -41,19 +41,19 @@ export const TrimeshCollider = defineComponent({
   setup(props) {
     const physics = inject(PHYSICS_CONTEXT)
     if (!physics) {
-      throw new Error('@bluera/vue-threejs-rapier: <TrimeshCollider> must be placed inside a <Physics> component')
+      throw new Error('@xperimntl/vue-threejs-rapier: <TrimeshCollider> must be placed inside a <Physics> component')
     }
 
     const rigidBody = inject(RIGID_BODY_CONTEXT)
     if (!rigidBody) {
-      throw new Error('@bluera/vue-threejs-rapier: <TrimeshCollider> must be placed inside a <RigidBody> component')
+      throw new Error('@xperimntl/vue-threejs-rapier: <TrimeshCollider> must be placed inside a <RigidBody> component')
     }
 
     const { rapier } = physics
     const desc = rapier.ColliderDesc.trimesh(props.args[0], props.args[1])
 
     if (!desc) {
-      throw new Error('@bluera/vue-threejs-rapier: Failed to create trimesh collider descriptor')
+      throw new Error('@xperimntl/vue-threejs-rapier: Failed to create trimesh collider descriptor')
     }
 
     if (props.position) {

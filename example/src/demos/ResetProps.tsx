@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useThree } from '@bluera/vue-threejs'
+import { Canvas, useFrame, useThree } from '@xperimntl/vue-threejs'
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { Group } from 'three'
 

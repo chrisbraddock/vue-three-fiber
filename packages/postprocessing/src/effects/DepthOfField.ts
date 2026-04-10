@@ -1,6 +1,6 @@
 import { defineComponent, inject, watch, onBeforeUnmount } from 'vue'
 import { DepthOfFieldEffect } from 'postprocessing'
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 import { COMPOSER_CONTEXT } from '../context'
 
 export const DepthOfField = defineComponent({

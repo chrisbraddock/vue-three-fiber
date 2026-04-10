@@ -1,6 +1,6 @@
 {
-  "name": "@bluera/vue-threejs",
-  "version": "1.1.1",
+  "name": "@xperimntl/vue-threejs",
+  "version": "1.0.0",
   "description": "A Vue.js renderer for Three.js",
   "keywords": [
     "vue",
@@ -11,16 +11,16 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blueraai/vue-threejs/issues"
+    "url": "https://github.com/chris-xperimntl/vue-threejs/issues"
   },
-  "homepage": "https://github.com/blueraai/vue-threejs#readme",
+  "homepage": "https://github.com/chris-xperimntl/vue-threejs#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueraai/vue-threejs.git"
+    "url": "git+https://github.com/chris-xperimntl/vue-threejs.git"
   },
-  "main": "dist/bluera-vue-threejs.cjs.js",
-  "module": "dist/bluera-vue-threejs.esm.js",
-  "types": "dist/bluera-vue-threejs.cjs.d.ts",
+  "main": "dist/xperimntl-vue-threejs.cjs.js",
+  "module": "dist/xperimntl-vue-threejs.esm.js",
+  "types": "dist/xperimntl-vue-threejs.cjs.d.ts",
   "sideEffects": false,
   "preconstruct": {
     "entrypoints": [

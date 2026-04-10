@@ -1,11 +1,11 @@
 {
-  "name": "@bluera/vue-threejs-rapier",
-  "version": "1.1.1",
-  "description": "Vue-native physics for @bluera/vue-threejs using Rapier",
+  "name": "@xperimntl/vue-threejs-rapier",
+  "version": "1.0.0",
+  "description": "Vue-native physics for @xperimntl/vue-threejs using Rapier",
   "license": "MIT",
-  "main": "dist/bluera-vue-threejs-rapier.cjs.js",
-  "module": "dist/bluera-vue-threejs-rapier.esm.js",
-  "types": "dist/bluera-vue-threejs-rapier.cjs.d.ts",
+  "main": "dist/xperimntl-vue-threejs-rapier.cjs.js",
+  "module": "dist/xperimntl-vue-threejs-rapier.esm.js",
+  "types": "dist/xperimntl-vue-threejs-rapier.cjs.d.ts",
   "sideEffects": false,
   "preconstruct": {
     "entrypoints": [
@@ -16,7 +16,7 @@
   "peerDependencies": {
     "vue": ">=3.3",
     "three": ">=0.156",
-    "@bluera/vue-threejs": ">=1.0.0",
+    "@xperimntl/vue-threejs": ">=1.0.0",
     "@dimforge/rapier3d-compat": ">=0.12"
   }
 }

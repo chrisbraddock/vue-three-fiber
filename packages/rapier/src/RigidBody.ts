@@ -10,7 +10,7 @@ import {
   type ShallowRef,
 } from 'vue'
 import * as THREE from 'three'
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 import type RAPIER from '@dimforge/rapier3d-compat'
 import {
   PHYSICS_CONTEXT,
@@ -177,7 +177,7 @@ export const RigidBody = defineComponent({
   setup(props, { slots, emit }) {
     const physics = inject(PHYSICS_CONTEXT)
     if (!physics) {
-      throw new Error('@bluera/vue-threejs-rapier: <RigidBody> must be placed inside a <Physics> component')
+      throw new Error('@xperimntl/vue-threejs-rapier: <RigidBody> must be placed inside a <Physics> component')
     }
 
     const { world, rapier } = physics

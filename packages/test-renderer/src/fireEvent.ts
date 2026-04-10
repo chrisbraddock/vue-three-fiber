@@ -1,4 +1,4 @@
-import type { RootStore } from '@bluera/vue-threejs'
+import type { RootStore } from '@xperimntl/vue-threejs'
 
 import { toEventHandlerName } from './helpers/strings'
 

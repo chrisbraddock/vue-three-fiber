@@ -7,11 +7,11 @@ This tutorial will assume some Vue knowledge.
 
 ## Setting up the Canvas
 
-We'll start by importing the `<Canvas />` component from `@bluera/vue-threejs` and putting it in our Vue component.
+We'll start by importing the `<Canvas />` component from `@xperimntl/vue-threejs` and putting it in our Vue component.
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 </script>
 
 <template>
@@ -157,7 +157,7 @@ Please refer to the API for [a deeper explanation](/API/objects).
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 </script>
 
 <template>

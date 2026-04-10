@@ -1,6 +1,6 @@
 import { defineComponent, h, type PropType } from 'vue'
 import * as THREE from 'three'
-import { extend } from '@bluera/vue-threejs'
+import { extend } from '@xperimntl/vue-threejs'
 
 const gridVertexShader = /* glsl */ `
   varying vec3 worldPosition;

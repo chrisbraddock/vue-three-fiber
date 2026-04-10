@@ -1,6 +1,6 @@
 import { defineComponent, h, shallowRef, inject, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 import { PHYSICS_CONTEXT } from './context'
 
 export const Debug = defineComponent({
@@ -8,7 +8,7 @@ export const Debug = defineComponent({
   setup() {
     const physics = inject(PHYSICS_CONTEXT)
     if (!physics) {
-      throw new Error('@bluera/vue-threejs-rapier: <Debug> must be placed inside a <Physics> component')
+      throw new Error('@xperimntl/vue-threejs-rapier: <Debug> must be placed inside a <Physics> component')
     }
 
     const { world } = physics

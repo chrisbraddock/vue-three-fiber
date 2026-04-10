@@ -15,7 +15,7 @@ In a Vue custom renderer, template refs resolve to the renderer's internal Insta
 
 ```vue
 <script setup lang="ts">
-import { useObjectRef, useFrame } from '@bluera/vue-threejs'
+import { useObjectRef, useFrame } from '@xperimntl/vue-threejs'
 import type { Mesh } from 'three'
 
 const mesh = useObjectRef<Mesh>()
@@ -77,7 +77,7 @@ Registers a callback that runs after each rendered frame. Automatically subscrib
 
 ```vue
 <script setup lang="ts">
-import { useAfterRender } from '@bluera/vue-threejs'
+import { useAfterRender } from '@xperimntl/vue-threejs'
 
 useAfterRender((timestamp) => {
   // Runs after every frame -- useful for analytics, profiling,
@@ -93,7 +93,7 @@ Returns a function that resolves a promise after one rendered frame. Useful for 
 
 ```vue
 <script setup lang="ts">
-import { useNextFrame, useThree } from '@bluera/vue-threejs'
+import { useNextFrame, useThree } from '@xperimntl/vue-threejs'
 
 const waitForFrame = useNextFrame()
 const gl = useThree((s) => s.gl)
@@ -113,7 +113,7 @@ Returns an object with a `commit()` method that waits for Vue's `nextTick` (so r
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRenderCommit, useThree } from '@bluera/vue-threejs'
+import { useRenderCommit, useThree } from '@xperimntl/vue-threejs'
 
 const color = ref('orange')
 const { commit } = useRenderCommit()
@@ -148,7 +148,7 @@ Vue's `provide`/`inject` works transparently across the Canvas boundary. A servi
 <script setup lang="ts">
 import { provide, ref } from 'vue'
 import type { InjectionKey, Ref } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import MyScene from './MyScene.vue'
 
 export interface SelectionService {
@@ -204,7 +204,7 @@ Canvas exposes two named slots for layering DOM content over the 3D scene:
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 
 const color = ref('#ff8800')
 const speed = ref(1)
@@ -258,7 +258,7 @@ When an error is captured during rendering, the Canvas replaces the scene with t
 
 ```vue
 <script setup lang="ts">
-import { watchInvalidate } from '@bluera/vue-threejs'
+import { watchInvalidate } from '@xperimntl/vue-threejs'
 
 const props = defineProps<{ color: string }>()
 
@@ -294,7 +294,7 @@ vue-threejs includes a plugin system that lets ecosystem packages hook into the 
 ### Quick overview
 
 ```ts
-import { defineFiberPlugin } from '@bluera/vue-threejs'
+import { defineFiberPlugin } from '@xperimntl/vue-threejs'
 
 export const myPlugin = defineFiberPlugin({
   name: 'my-plugin',
@@ -312,8 +312,8 @@ export const myPlugin = defineFiberPlugin({
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
-import { createDreiPlugin } from '@bluera/vue-threejs-drei'
+import { Canvas } from '@xperimntl/vue-threejs'
+import { createDreiPlugin } from '@xperimntl/vue-threejs-drei'
 
 const plugins = [createDreiPlugin({ dracoPath: '/draco/' })]
 </script>

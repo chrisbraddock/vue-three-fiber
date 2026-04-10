@@ -81,6 +81,6 @@ export default defineConfig({
         ],
       },
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/blueraai/vue-threejs' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/chris-xperimntl/vue-threejs' }],
   },
 })

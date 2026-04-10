@@ -1,14 +1,14 @@
 # vue-threejs
 
-[![npm](https://img.shields.io/npm/v/@bluera/vue-threejs?style=flat&colorA=09090b&colorB=09090b)](https://www.npmjs.com/package/@bluera/vue-threejs)
-[![CI](https://img.shields.io/github/actions/workflow/status/blueraai/vue-threejs/test.yml?branch=master&style=flat&colorA=09090b&colorB=09090b&label=tests)](https://github.com/blueraai/vue-threejs/actions/workflows/test.yml)
-[![docs](https://img.shields.io/badge/docs-live-09090b?style=flat&colorA=09090b)](https://blueraai.github.io/vue-threejs/)
-[![license](https://img.shields.io/github/license/blueraai/vue-threejs?style=flat&colorA=09090b&colorB=09090b)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@xperimntl/vue-threejs?style=flat&colorA=09090b&colorB=09090b)](https://www.npmjs.com/package/@xperimntl/vue-threejs)
+[![CI](https://img.shields.io/github/actions/workflow/status/chris-xperimntl/vue-threejs/test.yml?branch=master&style=flat&colorA=09090b&colorB=09090b&label=tests)](https://github.com/chris-xperimntl/vue-threejs/actions/workflows/test.yml)
+[![docs](https://img.shields.io/badge/docs-live-09090b?style=flat&colorA=09090b)](https://chris-xperimntl.github.io/vue-threejs/)
+[![license](https://img.shields.io/github/license/chris-xperimntl/vue-threejs?style=flat&colorA=09090b&colorB=09090b)](LICENSE)
 
 A Vue 3 renderer for [Three.js](https://threejs.org/), ported from [react-three-fiber](https://github.com/pmndrs/react-three-fiber). Declarative scene authoring with Vue composables, DOM/3D slot composition, and reactive demand rendering.
 
 ```bash
-npm install @bluera/vue-threejs three vue
+npm install @xperimntl/vue-threejs three vue
 ```
 
 ## Quick Start
@@ -16,7 +16,7 @@ npm install @bluera/vue-threejs three vue
 ```vue
 <script setup lang="ts">
 import type { Mesh } from 'three'
-import { Canvas, useFrame, useObjectRef } from '@bluera/vue-threejs'
+import { Canvas, useFrame, useObjectRef } from '@xperimntl/vue-threejs'
 
 const box = useObjectRef<Mesh>()
 
@@ -77,7 +77,7 @@ useFrame((_, delta) => {
 - **Suspense** keeps previous content visible during re-entrance. Use manual loading patterns for transitions.
 - **Events** are raycaster-based, not DOM-based. Pointer capture semantics differ.
 
-See [Known Limitations](https://blueraai.github.io/vue-threejs/advanced/known-limitations) and [Compatibility Contract](https://blueraai.github.io/vue-threejs/advanced/compatibility-contract).
+See [Known Limitations](https://chris-xperimntl.github.io/vue-threejs/advanced/known-limitations) and [Compatibility Contract](https://chris-xperimntl.github.io/vue-threejs/advanced/compatibility-contract).
 
 </details>
 
@@ -94,19 +94,19 @@ Built-in packages ported from [Poimandres](https://github.com/pmndrs):
 
 ## Documentation
 
-[**blueraai.github.io/vue-threejs**](https://blueraai.github.io/vue-threejs/)
+[**chris-xperimntl.github.io/vue-threejs**](https://chris-xperimntl.github.io/vue-threejs/)
 
-- [Installation](https://blueraai.github.io/vue-threejs/getting-started/installation)
-- [Interactive Examples](https://blueraai.github.io/vue-threejs/getting-started/examples)
-- [Vue-Native Patterns](https://blueraai.github.io/vue-threejs/tutorials/vue-native-patterns)
-- [Architecture](https://blueraai.github.io/vue-threejs/advanced/architecture)
-- [Support Matrix](https://blueraai.github.io/vue-threejs/advanced/support-matrix)
+- [Installation](https://chris-xperimntl.github.io/vue-threejs/getting-started/installation)
+- [Interactive Examples](https://chris-xperimntl.github.io/vue-threejs/getting-started/examples)
+- [Vue-Native Patterns](https://chris-xperimntl.github.io/vue-threejs/tutorials/vue-native-patterns)
+- [Architecture](https://chris-xperimntl.github.io/vue-threejs/advanced/architecture)
+- [Support Matrix](https://chris-xperimntl.github.io/vue-threejs/advanced/support-matrix)
 
 <details>
 <summary><strong>Develop locally</strong></summary>
 
 ```bash
-git clone https://github.com/blueraai/vue-threejs.git
+git clone https://github.com/chris-xperimntl/vue-threejs.git
 cd vue-threejs
 yarn install && yarn build
 ```

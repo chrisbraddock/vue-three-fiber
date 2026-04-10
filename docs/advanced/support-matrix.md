@@ -37,11 +37,11 @@ description: Supported versions, environments, and browser compatibility for vue
 
 ## Package Status
 
-| Package                              | Status | Description                |
-| ------------------------------------ | ------ | -------------------------- |
-| `@bluera/vue-threejs`                | Stable | Core renderer              |
-| `@bluera/vue-threejs-drei`           | Stable | Controls, loaders, helpers |
-| `@bluera/vue-threejs-postprocessing` | Stable | GPU postprocessing effects |
-| `@bluera/vue-threejs-rapier`         | Stable | Rigid-body physics         |
-| `@bluera/vue-threejs-test-renderer`  | Stable | Node.js test renderer      |
-| `@bluera/eslint-plugin-vue-threejs`  | Stable | ESLint rules               |
+| Package                                 | Status | Description                |
+| --------------------------------------- | ------ | -------------------------- |
+| `@xperimntl/vue-threejs`                | Stable | Core renderer              |
+| `@xperimntl/vue-threejs-drei`           | Stable | Controls, loaders, helpers |
+| `@xperimntl/vue-threejs-postprocessing` | Stable | GPU postprocessing effects |
+| `@xperimntl/vue-threejs-rapier`         | Stable | Rigid-body physics         |
+| `@xperimntl/vue-threejs-test-renderer`  | Stable | Node.js test renderer      |
+| `@xperimntl/eslint-plugin-vue-threejs`  | Stable | ESLint rules               |

@@ -1,4 +1,4 @@
-import { useFrame, type Instance } from '@bluera/vue-threejs'
+import { useFrame, type Instance } from '@xperimntl/vue-threejs'
 import { defineComponent, ref, h, Fragment } from 'vue'
 import { Group, Mesh, BoxGeometry, MeshBasicMaterial, SphereGeometry, Object3D, Material } from 'three'
 

@@ -35,7 +35,7 @@ onMounted(() => {
 Whenever you want to type components that rely on three elements, you can use the `ThreeElements` interface to extract the mesh, group, or any other three element, including custom elements.
 
 ```ts
-import { ThreeElements } from '@bluera/vue-threejs'
+import { ThreeElements } from '@xperimntl/vue-threejs'
 
 type FooProps = ThreeElements['mesh'] & { bar: boolean }
 ```
@@ -47,7 +47,7 @@ vue-threejs can also accept third-party elements and extend them into its intern
 ```ts
 import { ref } from 'vue'
 import { GridHelper } from 'three'
-import { extend } from '@bluera/vue-threejs'
+import { extend } from '@xperimntl/vue-threejs'
 
 // Create our custom element
 class CustomElement extends GridHelper {}
@@ -78,7 +78,7 @@ To define our element, we'll use the `ThreeElement` interface to extend `ThreeEl
 ```ts
 import { ref } from 'vue'
 import { GridHelper } from 'three'
-import { extend, ThreeElement } from '@bluera/vue-threejs'
+import { extend, ThreeElement } from '@xperimntl/vue-threejs'
 
 // Create our custom element
 class CustomElement extends GridHelper {}
@@ -87,7 +87,7 @@ class CustomElement extends GridHelper {}
 extend({ CustomElement })
 
 // Add types to ThreeElements elements so primitives pick up on it
-declare module '@bluera/vue-threejs' {
+declare module '@xperimntl/vue-threejs' {
   interface ThreeElements {
     customElement: ThreeElement<typeof CustomElement>
   }
@@ -124,7 +124,7 @@ If you open your own root instead of using `<Canvas>`, you can extend the defaul
 
 ```ts
 import * as THREE from 'three'
-import { extend, createRoot, events } from '@bluera/vue-threejs'
+import { extend, createRoot, events } from '@xperimntl/vue-threejs'
 
 // Register the THREE namespace as native elements.
 extend(THREE as any)

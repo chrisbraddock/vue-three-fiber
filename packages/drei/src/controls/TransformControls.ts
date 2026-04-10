@@ -1,5 +1,5 @@
 import { defineComponent, onBeforeUnmount, shallowRef, watch, type PropType } from 'vue'
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 import { TransformControls as TransformControlsImpl } from 'three-stdlib'
 import * as THREE from 'three'
 

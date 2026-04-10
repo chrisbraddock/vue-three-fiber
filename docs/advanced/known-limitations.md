@@ -12,7 +12,7 @@ However, strict identity comparison (`===`) against the raw Three.js object will
 **When you need the raw object**, use [`useObjectRef`](/tutorials/object-handles):
 
 ```ts
-import { useObjectRef } from '@bluera/vue-threejs'
+import { useObjectRef } from '@xperimntl/vue-threejs'
 import type { Mesh } from 'three'
 
 const mesh = useObjectRef<Mesh>()
@@ -106,7 +106,7 @@ vue-threejs uses Vue's `createRenderer` API to render into Three.js instead of t
 The `flushSync` export is a compatibility shim. For new code, prefer `useRenderCommit` and `useNextFrame` which integrate properly with Vue's async scheduling:
 
 ```ts
-import { useRenderCommit } from '@bluera/vue-threejs'
+import { useRenderCommit } from '@xperimntl/vue-threejs'
 
 const { commit } = useRenderCommit()
 await commit() // waits for Vue flush + one rendered frame

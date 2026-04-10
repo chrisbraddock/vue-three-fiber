@@ -1,18 +1,18 @@
 {
-  "name": "@bluera/vue-threejs-test-renderer",
-  "version": "1.1.1",
-  "description": "Test renderer for @bluera/vue-threejs.",
+  "name": "@xperimntl/vue-threejs-test-renderer",
+  "version": "1.0.0",
+  "description": "Test renderer for @xperimntl/vue-threejs.",
   "license": "MIT",
-  "main": "dist/bluera-vue-threejs-test-renderer.cjs.js",
-  "module": "dist/bluera-vue-threejs-test-renderer.esm.js",
-  "types": "dist/bluera-vue-threejs-test-renderer.cjs.d.ts",
+  "main": "dist/xperimntl-vue-threejs-test-renderer.cjs.js",
+  "module": "dist/xperimntl-vue-threejs-test-renderer.esm.js",
+  "types": "dist/xperimntl-vue-threejs-test-renderer.cjs.d.ts",
   "bugs": {
-    "url": "https://github.com/blueraai/vue-threejs/issues"
+    "url": "https://github.com/chris-xperimntl/vue-threejs/issues"
   },
-  "homepage": "https://github.com/blueraai/vue-threejs/tree/master/packages/test-renderer",
+  "homepage": "https://github.com/chris-xperimntl/vue-threejs/tree/master/packages/test-renderer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueraai/vue-threejs.git"
+    "url": "git+https://github.com/chris-xperimntl/vue-threejs.git"
   },
   "preconstruct": {
     "entrypoints": [
@@ -21,7 +21,7 @@
   },
   "peerDependencies": {
     "vue": ">=3.3",
-    "@bluera/vue-threejs": ">=1.0.0",
+    "@xperimntl/vue-threejs": ">=1.0.0",
     "three": ">=0.156"
   }
 }

@@ -24,7 +24,7 @@ The `watchInvalidate` composable bridges Vue reactivity and the render loop. It 
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { watchInvalidate } from '@bluera/vue-threejs'
+import { watchInvalidate } from '@xperimntl/vue-threejs'
 
 const color = ref('orange')
 const position = ref<[number, number, number]>([0, 0, 0])
@@ -50,7 +50,7 @@ Here is a typical demand-mode scene: a product viewer where the user rotates the
 ```vue
 <!-- ProductViewer.vue -->
 <script setup lang="ts">
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import { ref } from 'vue'
 import Product from './Product.vue'
 
@@ -75,7 +75,7 @@ const color = ref('#4488ff')
 ```vue
 <!-- Product.vue -->
 <script setup lang="ts">
-import { watchInvalidate } from '@bluera/vue-threejs'
+import { watchInvalidate } from '@xperimntl/vue-threejs'
 
 const props = defineProps<{ color: string }>()
 
@@ -105,7 +105,7 @@ If you also mutate objects directly (orbit controls, physics, etc.), you need to
 ```vue
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useThree } from '@bluera/vue-threejs'
+import { useThree } from '@xperimntl/vue-threejs'
 
 const invalidate = useThree((state) => state.invalidate)
 const controlsRef = ref()

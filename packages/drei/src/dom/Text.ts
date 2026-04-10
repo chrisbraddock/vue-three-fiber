@@ -1,5 +1,5 @@
 import { defineComponent, h, type PropType } from 'vue'
-import { extend } from '@bluera/vue-threejs'
+import { extend } from '@xperimntl/vue-threejs'
 // @ts-ignore - troika-three-text types may not be available
 import { Text as TroikaText } from 'troika-three-text'
 

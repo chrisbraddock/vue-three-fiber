@@ -19,7 +19,7 @@ Let's then with this information create a small scene where we can use this text
 
 ```vue
 <script setup>
-import { Canvas, useLoader } from '@bluera/vue-threejs'
+import { Canvas, useLoader } from '@xperimntl/vue-threejs'
 import { TextureLoader } from 'three'
 
 const colorMap = useLoader(TextureLoader, 'PavingStones092_1K_Color.jpg')
@@ -78,7 +78,7 @@ The displacement will probably be too much, usually setting it to 0.2 will make 
 
 ```vue
 <script setup>
-import { useLoader } from '@bluera/vue-threejs'
+import { useLoader } from '@xperimntl/vue-threejs'
 import { TextureLoader } from 'three'
 
 const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useLoader(TextureLoader, [
@@ -107,11 +107,11 @@ const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] = useLoader(Te
 
 ## Using `useTexture`
 
-For loading a single texture, `@bluera/vue-threejs-drei` provides `useTexture` which handles loading and cleanup automatically:
+For loading a single texture, `@xperimntl/vue-threejs-drei` provides `useTexture` which handles loading and cleanup automatically:
 
 ```vue
 <script setup>
-import { useTexture } from '@bluera/vue-threejs-drei'
+import { useTexture } from '@xperimntl/vue-threejs-drei'
 
 const colorMap = useTexture('PavingStones092_1K_Color.jpg')
 </script>

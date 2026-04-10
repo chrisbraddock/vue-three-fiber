@@ -9,7 +9,7 @@ import {
   type PropType,
   type ShallowRef,
 } from 'vue'
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 import type RAPIER from '@dimforge/rapier3d-compat'
 import {
   PHYSICS_CONTEXT,

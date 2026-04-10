@@ -3,7 +3,7 @@ title: Drei
 description: Vue-native helpers and abstractions for vue-threejs.
 ---
 
-# @bluera/vue-threejs-drei
+# @xperimntl/vue-threejs-drei
 
 A growing collection of useful helpers and abstractions for vue-threejs.
 
@@ -11,14 +11,14 @@ A growing collection of useful helpers and abstractions for vue-threejs.
 
 ## Availability
 
-`@bluera/vue-threejs-drei` is included in the monorepo. Install the core package to use it:
+`@xperimntl/vue-threejs-drei` is included in the monorepo. Install the core package to use it:
 
 ## Plugin registration
 
 Drei can be registered as a [fiber plugin](/ecosystem/plugins) to set global defaults:
 
 ```ts
-import { createDreiPlugin } from '@bluera/vue-threejs-drei'
+import { createDreiPlugin } from '@xperimntl/vue-threejs-drei'
 
 // On Canvas
 <Canvas :plugins="[createDreiPlugin({ dracoPath: '/draco/' })]">
@@ -26,8 +26,8 @@ import { createDreiPlugin } from '@bluera/vue-threejs-drei'
 
 ```ts
 // Or app-wide
-import { registerFiberPlugin } from '@bluera/vue-threejs'
-import { dreiFiberPlugin } from '@bluera/vue-threejs-drei'
+import { registerFiberPlugin } from '@xperimntl/vue-threejs'
+import { dreiFiberPlugin } from '@xperimntl/vue-threejs-drei'
 
 registerFiberPlugin(app, dreiFiberPlugin)
 ```
@@ -47,7 +47,7 @@ Camera orbit controls that work with the fiber event system.
 
 ```vue
 <script setup>
-import { OrbitControls } from '@bluera/vue-threejs-drei'
+import { OrbitControls } from '@xperimntl/vue-threejs-drei'
 </script>
 
 <template>
@@ -64,7 +64,7 @@ Attach to an object to enable translate/rotate/scale gizmos.
 
 ```vue
 <script setup>
-import { TransformControls } from '@bluera/vue-threejs-drei'
+import { TransformControls } from '@xperimntl/vue-threejs-drei'
 </script>
 
 <template>
@@ -85,7 +85,7 @@ Load GLTF/GLB models with optional Draco compression.
 
 ```vue
 <script setup>
-import { useGLTF } from '@bluera/vue-threejs-drei'
+import { useGLTF } from '@xperimntl/vue-threejs-drei'
 
 const gltf = useGLTF('/model.glb', { draco: true })
 </script>
@@ -103,7 +103,7 @@ Load a texture with automatic disposal.
 
 ```vue
 <script setup>
-import { useTexture } from '@bluera/vue-threejs-drei'
+import { useTexture } from '@xperimntl/vue-threejs-drei'
 
 const map = useTexture('/texture.jpg')
 </script>
@@ -123,7 +123,7 @@ Set up image-based lighting with HDR environment maps.
 
 ```vue
 <script setup>
-import { Environment } from '@bluera/vue-threejs-drei'
+import { Environment } from '@xperimntl/vue-threejs-drei'
 </script>
 
 <template>

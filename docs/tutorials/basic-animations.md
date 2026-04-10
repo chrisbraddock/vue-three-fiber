@@ -15,7 +15,7 @@ It's important to remember that **Fiber composables can only be called inside a 
 
 ```vue
 <script setup>
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 
 useFrame(() => {
   console.log("Hey, I'm executing every frame!")

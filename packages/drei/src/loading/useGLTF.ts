@@ -1,5 +1,5 @@
 import { inject, shallowRef, watch, onBeforeUnmount, isRef, type Ref, type ShallowRef } from 'vue'
-import { buildGraph, type ObjectMap } from '@bluera/vue-threejs'
+import { buildGraph, type ObjectMap } from '@xperimntl/vue-threejs'
 import { GLTFLoader, DRACOLoader, MeshoptDecoder, type GLTF } from 'three-stdlib'
 import { DREI_DEFAULTS } from '../plugin'
 

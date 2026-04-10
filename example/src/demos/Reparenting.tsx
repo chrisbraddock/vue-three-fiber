@@ -1,4 +1,4 @@
-import { Canvas, createPortal } from '@bluera/vue-threejs'
+import { Canvas, createPortal } from '@xperimntl/vue-threejs'
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { Group, Object3D } from 'three'
 

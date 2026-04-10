@@ -72,7 +72,7 @@ In general you should prefer useFrame. Consider mutating props safe as long as t
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 
 const meshRef = ref()
 useFrame((state, delta) => {
@@ -102,7 +102,7 @@ The frame loop is where you should place your animations. For instance using ler
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { useFrame } from '@bluera/vue-threejs'
+import { useFrame } from '@xperimntl/vue-threejs'
 
 const props = defineProps({ active: Boolean })
 const meshRef = ref()
@@ -258,7 +258,7 @@ Instead use useLoader, which caches assets and makes them available throughout t
 
 ```vue
 <script setup>
-import { useLoader } from '@bluera/vue-threejs'
+import { useLoader } from '@xperimntl/vue-threejs'
 import { TextureLoader } from 'three'
 
 const texture = useLoader(TextureLoader, url)

@@ -1,5 +1,5 @@
 import { defineComponent, h, nextTick, onMounted, shallowRef, watch, type PropType } from 'vue'
-import { useThree, useFrame } from '@bluera/vue-threejs'
+import { useThree, useFrame } from '@xperimntl/vue-threejs'
 import * as THREE from 'three'
 
 const _box = new THREE.Box3()

@@ -1,6 +1,6 @@
 import { defineComponent, provide, shallowRef, watch, onBeforeUnmount, type PropType } from 'vue'
 import { EffectComposer as PostprocessingEffectComposer, EffectPass, RenderPass, type Effect } from 'postprocessing'
-import { useThree, useFrame } from '@bluera/vue-threejs'
+import { useThree, useFrame } from '@xperimntl/vue-threejs'
 import { COMPOSER_CONTEXT, type ComposerContext } from './context'
 
 interface EffectEntry {

@@ -7,7 +7,7 @@ The `Canvas` object is where you start to define your vue-threejs Scene.
 
 ```vue
 <script setup>
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 </script>
 
 <template>
@@ -38,7 +38,7 @@ import { Canvas } from '@bluera/vue-threejs'
 | dpr             | Pixel-ratio, use `window.devicePixelRatio`, or automatic: [min, max]                                                                     | `[1, 2]`                                                 |
 | legacy          | Enables THREE.ColorManagement in three r139 or later                                                                                     | `false`                                                  |
 | linear          | Switch off automatic sRGB color space and gamma correction                                                                               | `false`                                                  |
-| events          | Configuration for the event manager, as a function of state                                                                              | `import { events } from "@bluera/vue-threejs"`           |
+| events          | Configuration for the event manager, as a function of state                                                                              | `import { events } from "@xperimntl/vue-threejs"`        |
 | eventSource     | The source where events are being subscribed to, HTMLElement                                                                             | `Ref<HTMLElement>`, `gl.domElement.parentNode`           |
 | eventPrefix     | The event prefix that is cast into canvas pointer x/y events                                                                             | `offset`                                                 |
 | flat            | Use `THREE.NoToneMapping` instead of `THREE.ACESFilmicToneMapping`                                                                       | `false`                                                  |
@@ -132,7 +132,7 @@ Recent Three.js now includes a WebGPU renderer. While still a work in progress a
 <script setup lang="ts">
 import * as THREE from 'three/webgpu'
 import * as TSL from 'three/tsl'
-import { Canvas, extend, useFrame, useThree } from '@bluera/vue-threejs'
+import { Canvas, extend, useFrame, useThree } from '@xperimntl/vue-threejs'
 
 extend(THREE as any)
 </script>
@@ -166,7 +166,7 @@ Creates a root targeting a canvas, rendering content.
 
 ```js
 import * as THREE from 'three'
-import { extend, createRoot, events } from '@bluera/vue-threejs'
+import { extend, createRoot, events } from '@xperimntl/vue-threejs'
 
 // Register the THREE namespace as native elements.
 // See below for notes on tree-shaking
@@ -205,7 +205,7 @@ New with v8, the underlying reconciler no longer pulls in the THREE namespace au
 This enables a granular catalogue which also enables tree-shaking via the `extend` API:
 
 ```js
-import { extend, createRoot } from '@bluera/vue-threejs'
+import { extend, createRoot } from '@xperimntl/vue-threejs'
 import { Mesh, BoxGeometry, MeshStandardMaterial } from 'three'
 
 extend({ Mesh, BoxGeometry, MeshStandardMaterial })

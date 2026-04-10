@@ -1,4 +1,4 @@
-import type { Instance } from '@bluera/vue-threejs'
+import type { Instance } from '@xperimntl/vue-threejs'
 import type { SceneGraphItem } from '../types/public'
 import type { Object3D } from 'three'
 

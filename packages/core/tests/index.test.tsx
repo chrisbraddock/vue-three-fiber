@@ -2,7 +2,7 @@ import { h, defineComponent } from 'vue'
 import * as THREE from 'three'
 import ts from 'typescript'
 import * as path from 'path'
-import { createCanvas } from '@bluera/vue-threejs-test-renderer/src/createTestCanvas'
+import { createCanvas } from '@xperimntl/vue-threejs-test-renderer/src/createTestCanvas'
 import {
   ReconcilerRoot,
   createRoot as createRootImpl,

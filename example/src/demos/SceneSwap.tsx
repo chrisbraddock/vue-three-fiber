@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useObjectRef } from '@bluera/vue-threejs'
+import { Canvas, useFrame, useObjectRef } from '@xperimntl/vue-threejs'
 import { defineComponent, ref, h } from 'vue'
 import type { Mesh } from 'three'
 

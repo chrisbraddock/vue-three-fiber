@@ -1,4 +1,4 @@
-import { Canvas } from '@bluera/vue-threejs'
+import { Canvas } from '@xperimntl/vue-threejs'
 import { defineComponent, ref } from 'vue'
 
 const SphereComponent = defineComponent({

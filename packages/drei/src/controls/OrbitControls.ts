@@ -1,5 +1,5 @@
 import { defineComponent, onBeforeUnmount, shallowRef, watch, type PropType } from 'vue'
-import { useThree, useFrame } from '@bluera/vue-threejs'
+import { useThree, useFrame } from '@xperimntl/vue-threejs'
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import * as THREE from 'three'
 
