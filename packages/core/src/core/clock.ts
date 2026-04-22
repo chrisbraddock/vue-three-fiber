@@ -1,20 +1,16 @@
 /**
- * Internal drop-in replacement for `THREE.Clock`.
+ * Internal timekeeper used by vue-threejs's render loop. Byte-for-byte
+ * clone of three.js's Clock semantics (start/stop/elapsedTime/getDelta)
+ * without the r166 warn-on-construct emitted by THREE.Clock.
  *
- * three.js r166+ deprecated `THREE.Clock` in favor of `THREE.Timer`, but the
- * two have incompatible APIs (Clock: start/stop/elapsedTime/getDelta; Timer:
- * update/getElapsed/getDelta). vue-threejs's render loop was built against
- * the Clock API; replacing it with Timer is a non-trivial surface change.
- *
- * Constructing a `THREE.Clock` prints
- *   "THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
- * once per instance. vue-threejs creates a Clock per Canvas root, so the
- * warning fires for every scene.
- *
- * This file is a byte-for-byte behavioral clone of three.js's Clock class
- * with the deprecation warning removed. Same API, same semantics.
+ * Named `V3fClock` rather than `Clock` on purpose: when consumer
+ * bundlers (Vite + rollup on app builds) scope-hoist this file
+ * alongside `three.module.js`, two top-level classes named `Clock`
+ * collide. Rollup has been observed to rewrite local call-sites to
+ * three's class, which reintroduces the r166 warn. A distinct name
+ * removes the collision outright.
  */
-export class Clock {
+export class V3fClock {
   autoStart: boolean
   running = false
   startTime = 0

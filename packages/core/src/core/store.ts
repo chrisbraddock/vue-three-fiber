@@ -3,7 +3,7 @@ import type { InjectionKey } from 'vue'
 import { type StoreApi, createStore as createZustandStore } from 'zustand/vanilla'
 import type { DomEvent, EventManager, PointerCaptureTarget, ThreeEvent } from './events'
 import { calculateDpr, type Camera, isOrthographicCamera, updateCamera } from './utils'
-import { Clock } from './clock'
+import { V3fClock } from './clock'
 
 export type MutableRef<T> = { current: T }
 
@@ -90,8 +90,8 @@ export interface RootState {
   scene: THREE.Scene
   /** Default raycaster */
   raycaster: THREE.Raycaster
-  /** Default clock (internal Clock-compatible clone; THREE.Clock is deprecated in r166+). */
-  clock: Clock
+  /** Default clock. Internal V3fClock avoids the r166 warn-on-construct in three. */
+  clock: V3fClock
   /** Event layer interface, contains the event handler and the node they're connected to */
   events: EventManager<any>
   /** XR interface */
@@ -199,7 +199,7 @@ export const createStore = (
       flat: false,
 
       controls: null,
-      clock: new Clock(),
+      clock: new V3fClock(),
       pointer,
       mouse: pointer,
 
